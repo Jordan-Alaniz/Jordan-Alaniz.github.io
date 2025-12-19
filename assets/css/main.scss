@@ -1,0 +1,9 @@
+---
+---
+@import "minimal-mistakes";
+
+html[data-theme="dark"] {
+  --mm-background-color: #0f1115;
+  --mm-text-color: #e6e6e6;
+  --mm-link-color: #8ab4f8;
+}
