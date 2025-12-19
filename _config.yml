@@ -19,13 +19,13 @@ description: >- # this means to ignore newlines until "baseurl:"
   Student portfolio featuring projects, writing, and experiments in engineering and software.
 twitter_username:
 github_username: Jordan-Alaniz
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 minimal_mistakes_skin: air
-color_scheme: dark
+color_scheme: auto
 search: false
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
