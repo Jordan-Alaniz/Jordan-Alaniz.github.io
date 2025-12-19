@@ -67,18 +67,6 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jordan-alaniz"
 
-nav:
-  - title: Home
-    url: /
-  - title: Projects
-    url: /projects/
-  - title: Blog
-    url: /blog/
-  - title: Resume
-    url: /resume/
-  - title: About
-    url: /about/
-
 footer:
   links:
     - label: "GitHub"
