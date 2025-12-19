@@ -68,6 +68,12 @@ author:
 
 footer:
   links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:jordan.alaniz@outlook.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/jordan-alaniz"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jordan-alaniz"
