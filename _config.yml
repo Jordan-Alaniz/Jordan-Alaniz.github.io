@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 twitter_username:
 github_username: Jordan-Alaniz
 minimal_mistakes_skin: air
-color_scheme: auto
+color_scheme: dark
 search: false
 
 # Build settings
