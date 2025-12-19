@@ -20,8 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 twitter_username:
 github_username: Jordan-Alaniz
 remote_theme: "mmistakes/minimal-mistakes@4.26.2"
-minimal_mistakes_skin: air
-color_scheme: auto
+minimal_mistakes_skin: dark
 search: false
 
 # Build settings
@@ -69,6 +68,12 @@ author:
 
 footer:
   links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:jordan.alaniz@outlook.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/jordan-alaniz"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jordan-alaniz"
