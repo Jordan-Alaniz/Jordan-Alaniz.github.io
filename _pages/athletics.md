@@ -78,4 +78,33 @@ permalink: /athletics/
       <div class="info-cell-sub"><a href="{{ site.milesplit_url }}" target="_blank" rel="noopener">View MileSplit profile →</a></div>
     </div></div>
   </div>
+
+  <span class="section-label" style="margin-top:2.5rem;display:block;">Training log</span>
+  {% include training-log.html %}
+
+  <span class="section-label" style="margin-top:2.5rem;display:block;">Race footage</span>
+
+  <div class="video-section">
+    <div class="video-frame" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+      <iframe
+        src="https://drive.google.com/file/d/1JXoG2tSdJvHGkTJcPpji8noB6NWoGxhQ/preview"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-meta">
+      <div class="video-meta-text">
+        <div class="video-meta-title">Mile PR Run — Indoor Track 2026</div>
+        <div class="video-meta-sub">
+          ASCTE Indoor Invitational · 5:15.81<br>
+          Final 200m surge to close — one of the best races of the season
+        </div>
+      </div>
+      <a href="https://drive.google.com/file/d/1JXoG2tSdJvHGkTJcPpji8noB6NWoGxhQ/view?usp=sharing"
+         target="_blank" rel="noopener" class="video-download-btn">
+        ↓ Full quality video
+      </a>
+    </div>
+  </div>
 </div>

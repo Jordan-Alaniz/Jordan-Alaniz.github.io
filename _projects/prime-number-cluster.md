@@ -2,6 +2,7 @@
 title: "Prime Number Cluster"
 excerpt: "Optimized algorithms for fast prime number computation and built a small computer cluster network for distributed calculations."
 date: 2024-11-01
+status: "Complete"
 tags:
   - Python
   - Networking

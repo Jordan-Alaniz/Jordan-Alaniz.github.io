@@ -37,6 +37,7 @@ permalink: /academics/
     {% for project in projects %}
     <a href="{{ project.url | relative_url }}" class="project-card">
       <span class="project-card-year">{{ project.date | date: "%Y" }} &mdash; {{ project.categories | first | default: "ASCTE" }}</span>
+      {% if project.status %}<span class="status-badge status-{{ project.status | downcase | replace: ' ', '-' }}">{{ project.status }}</span>{% endif %}
       <span class="project-card-title">{{ project.title }}</span>
       <p class="project-card-excerpt">{{ project.excerpt | strip_html | truncate: 120 }}</p>
       <div class="project-card-tags">

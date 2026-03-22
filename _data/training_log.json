@@ -1,0 +1,132 @@
+{
+  "last_updated": "2026-03-22",
+  "weekly_miles": 6.2,
+  "stats": {
+    "season_miles": 30.6,
+    "season_weeks": 2,
+    "avg_weekly_miles": 15.3,
+    "longest_run_mi": 9.0,
+    "longest_run_date": "2026-03-18",
+    "workouts_this_week": 2,
+    "workouts_total": 5,
+    "type_breakdown": {
+      "easy": 2,
+      "long": 1,
+      "tempo": 1,
+      "interval": 1,
+      "race": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "seed-001",
+      "date": "2026-03-22",
+      "day": "Sun",
+      "type": "easy",
+      "type_label": "Easy Run",
+      "distance_mi": 6.2,
+      "duration": "52:18",
+      "pace": "8:26",
+      "avg_hr": 143,
+      "max_hr": 158,
+      "notes": "Morning easy. Felt good — legs still a little heavy from Thursday's workout.",
+      "laps": [
+        {"n": 1, "dist": "1.00", "time": "8:42", "pace": "8:42", "hr": 135},
+        {"n": 2, "dist": "1.00", "time": "8:30", "pace": "8:30", "hr": 140},
+        {"n": 3, "dist": "1.00", "time": "8:22", "pace": "8:22", "hr": 144},
+        {"n": 4, "dist": "1.00", "time": "8:20", "pace": "8:20", "hr": 147},
+        {"n": 5, "dist": "1.00", "time": "8:15", "pace": "8:15", "hr": 150},
+        {"n": 6, "dist": "0.20", "time": "1:49", "pace": "9:05", "hr": 145}
+      ]
+    },
+    {
+      "id": "seed-002",
+      "date": "2026-03-20",
+      "day": "Fri",
+      "type": "tempo",
+      "type_label": "Tempo",
+      "distance_mi": 5.5,
+      "duration": "37:44",
+      "pace": "6:51",
+      "avg_hr": 172,
+      "max_hr": 184,
+      "notes": "2mi warm-up, 3×1mi at 5K effort w/ 90s jog rest, 0.5mi cool-down.",
+      "laps": [
+        {"n": 1, "dist": "1.00", "time": "8:50", "pace": "8:50", "hr": 148},
+        {"n": 2, "dist": "1.00", "time": "8:55", "pace": "8:55", "hr": 150},
+        {"n": 3, "dist": "1.00", "time": "6:02", "pace": "6:02", "hr": 175},
+        {"n": 4, "dist": "0.23", "time": "2:05", "pace": "9:04", "hr": 158},
+        {"n": 5, "dist": "1.00", "time": "5:58", "pace": "5:58", "hr": 178},
+        {"n": 6, "dist": "0.23", "time": "2:08", "pace": "9:17", "hr": 160},
+        {"n": 7, "dist": "1.00", "time": "5:55", "pace": "5:55", "hr": 181},
+        {"n": 8, "dist": "0.04", "time": "0:21", "pace": "8:45", "hr": 170}
+      ]
+    },
+    {
+      "id": "seed-003",
+      "date": "2026-03-19",
+      "day": "Thu",
+      "type": "easy",
+      "type_label": "Recovery",
+      "distance_mi": 3.1,
+      "duration": "29:05",
+      "pace": "9:22",
+      "avg_hr": 132,
+      "max_hr": 145,
+      "notes": "Easy recovery jog after Tuesday intervals.",
+      "laps": []
+    },
+    {
+      "id": "seed-004",
+      "date": "2026-03-18",
+      "day": "Wed",
+      "type": "long",
+      "type_label": "Long Run",
+      "distance_mi": 9.0,
+      "duration": "1:18:42",
+      "pace": "8:44",
+      "avg_hr": 149,
+      "max_hr": 163,
+      "notes": "Longest run of the season. Negative split second half.",
+      "laps": [
+        {"n": 1, "dist": "1.00", "time": "9:10", "pace": "9:10", "hr": 138},
+        {"n": 2, "dist": "1.00", "time": "8:55", "pace": "8:55", "hr": 143},
+        {"n": 3, "dist": "1.00", "time": "8:50", "pace": "8:50", "hr": 146},
+        {"n": 4, "dist": "1.00", "time": "8:45", "pace": "8:45", "hr": 149},
+        {"n": 5, "dist": "1.00", "time": "8:42", "pace": "8:42", "hr": 151},
+        {"n": 6, "dist": "1.00", "time": "8:38", "pace": "8:38", "hr": 153},
+        {"n": 7, "dist": "1.00", "time": "8:30", "pace": "8:30", "hr": 155},
+        {"n": 8, "dist": "1.00", "time": "8:22", "pace": "8:22", "hr": 158},
+        {"n": 9, "dist": "1.00", "time": "8:10", "pace": "8:10", "hr": 162}
+      ]
+    },
+    {
+      "id": "seed-005",
+      "date": "2026-03-17",
+      "day": "Tue",
+      "type": "interval",
+      "type_label": "Intervals",
+      "distance_mi": 6.8,
+      "duration": "49:02",
+      "pace": "7:12",
+      "avg_hr": 168,
+      "max_hr": 191,
+      "notes": "Track: 6×800m @ 3:00–3:05 w/ 400m jog. Splits tight, fitness is building.",
+      "laps": [
+        {"n": 1, "dist": "1.00", "time": "8:48", "pace": "8:48", "hr": 144},
+        {"n": 2, "dist": "0.50", "time": "3:04", "pace": "6:08", "hr": 178},
+        {"n": 3, "dist": "0.25", "time": "2:18", "pace": "9:12", "hr": 162},
+        {"n": 4, "dist": "0.50", "time": "3:02", "pace": "6:04", "hr": 181},
+        {"n": 5, "dist": "0.25", "time": "2:20", "pace": "9:20", "hr": 163},
+        {"n": 6, "dist": "0.50", "time": "3:01", "pace": "6:02", "hr": 183},
+        {"n": 7, "dist": "0.25", "time": "2:22", "pace": "9:28", "hr": 165},
+        {"n": 8, "dist": "0.50", "time": "3:00", "pace": "6:00", "hr": 185},
+        {"n": 9, "dist": "0.25", "time": "2:19", "pace": "9:16", "hr": 164},
+        {"n": 10, "dist": "0.50", "time": "2:59", "pace": "5:58", "hr": 188},
+        {"n": 11, "dist": "0.25", "time": "2:21", "pace": "9:24", "hr": 166},
+        {"n": 12, "dist": "0.50", "time": "2:58", "pace": "5:56", "hr": 190},
+        {"n": 13, "dist": "1.00", "time": "9:08", "pace": "9:08", "hr": 148}
+      ]
+    }
+  ]
+}

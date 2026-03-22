@@ -2,6 +2,7 @@
 title: "Calculation Website"
 excerpt: "Built a functional multi-calculator website using HTML, CSS, and JavaScript."
 date: 2023-11-01
+status: "Complete"
 header:
   actions:
     - label: "View Live Site"

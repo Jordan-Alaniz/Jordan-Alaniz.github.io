@@ -2,6 +2,7 @@
 title: "Fusion 360 Trebuchet"
 excerpt: "Designed, constructed, and tested a trebuchet using Fusion 360 CAD software with limited materials."
 date: 2024-06-01
+status: "Complete"
 tags:
   - CAD
   - Engineering

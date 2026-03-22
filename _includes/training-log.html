@@ -1,0 +1,162 @@
+{% assign log = site.data.training_log %}
+{% assign acts = log.activities %}
+{% assign s = log.stats %}
+
+<!-- ── COACHING STATS BAR ─────────────────────────────── -->
+<div class="tlog-coach-bar">
+
+  <div class="tlog-coach-stat tlog-coach-stat--accent">
+    <span class="tlog-coach-val">{{ s.season_miles }}</span>
+    <span class="tlog-coach-lbl">Season miles</span>
+  </div>
+
+  <div class="tlog-coach-divider"></div>
+
+  <div class="tlog-coach-stat">
+    <span class="tlog-coach-val">{{ s.avg_weekly_miles }}</span>
+    <span class="tlog-coach-lbl">Avg mi / week</span>
+  </div>
+
+  <div class="tlog-coach-divider"></div>
+
+  <div class="tlog-coach-stat">
+    <span class="tlog-coach-val">{{ log.weekly_miles }}</span>
+    <span class="tlog-coach-lbl">Miles this week</span>
+  </div>
+
+  <div class="tlog-coach-divider"></div>
+
+  <div class="tlog-coach-stat">
+    <span class="tlog-coach-val">{{ s.longest_run_mi }}</span>
+    <span class="tlog-coach-lbl">Longest run <span class="tlog-coach-sub">({{ s.longest_run_date | date: "%b %-d" }})</span></span>
+  </div>
+
+  <div class="tlog-coach-divider"></div>
+
+  <div class="tlog-coach-stat">
+    <span class="tlog-coach-val">{{ s.workouts_this_week }}</span>
+    <span class="tlog-coach-lbl">Runs this week</span>
+  </div>
+
+  <div class="tlog-coach-divider"></div>
+
+  <div class="tlog-coach-stat">
+    <span class="tlog-coach-val">{{ s.season_weeks }}</span>
+    <span class="tlog-coach-lbl">Weeks in season</span>
+  </div>
+
+  <!-- Workout type mini-breakdown -->
+  <div class="tlog-coach-divider tlog-coach-divider--hide-sm"></div>
+  <div class="tlog-coach-breakdown tlog-coach-breakdown--hide-sm">
+    <span class="tlog-coach-lbl" style="margin-bottom:.4rem;display:block;">Season breakdown</span>
+    <div class="tlog-breakdown-pills">
+      {% if s.type_breakdown.easy > 0 %}
+      <span class="tlog-pill tlog-pill--easy">{{ s.type_breakdown.easy }} easy</span>
+      {% endif %}
+      {% if s.type_breakdown.long > 0 %}
+      <span class="tlog-pill tlog-pill--long">{{ s.type_breakdown.long }} long</span>
+      {% endif %}
+      {% if s.type_breakdown.tempo > 0 %}
+      <span class="tlog-pill tlog-pill--tempo">{{ s.type_breakdown.tempo }} tempo</span>
+      {% endif %}
+      {% if s.type_breakdown.interval > 0 %}
+      <span class="tlog-pill tlog-pill--interval">{{ s.type_breakdown.interval }} intervals</span>
+      {% endif %}
+      {% if s.type_breakdown.race > 0 %}
+      <span class="tlog-pill tlog-pill--race">{{ s.type_breakdown.race }} race</span>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+<!-- ── TRAINING LOG TABLE ──────────────────────────────── -->
+<div class="tlog-wrap">
+  <div class="tlog-header">
+    <span class="tlog-title">Training Log</span>
+    <div class="tlog-meta-right">
+      <span class="tlog-updated">Synced {{ log.last_updated }}</span>
+    </div>
+  </div>
+
+  <div class="tlog-head-row">
+    <span class="tlog-col-date">Date</span>
+    <span class="tlog-col-type">Type</span>
+    <span class="tlog-col-dist">Dist</span>
+    <span class="tlog-col-time">Time</span>
+    <span class="tlog-col-pace">Pace</span>
+    <span class="tlog-col-hr">Avg HR</span>
+    <span class="tlog-col-notes">Notes</span>
+  </div>
+
+  {% for act in acts limit:20 %}
+  {% assign has_laps = false %}
+  {% if act.laps.size > 0 %}{% assign has_laps = true %}{% endif %}
+  <div class="tlog-row{% if has_laps %} has-laps{% endif %}">
+    <div class="tlog-main-row">
+      <span class="tlog-col-date">
+        <span class="tlog-date-day">{{ act.day }}</span>
+        <span class="tlog-date-date">{{ act.date | date: "%b %-d" }}</span>
+      </span>
+      <span class="tlog-col-type">
+        <span class="tlog-badge tlog-badge--{{ act.type }}">{{ act.type_label }}</span>
+      </span>
+      <span class="tlog-col-dist"><strong>{{ act.distance_mi }}</strong> <span class="tlog-unit">mi</span></span>
+      <span class="tlog-col-time">{{ act.duration }}</span>
+      <span class="tlog-col-pace">{{ act.pace }}<span class="tlog-unit">/mi</span></span>
+      <span class="tlog-col-hr">
+        <span class="tlog-hr-dot"></span>{{ act.avg_hr }}
+      </span>
+      <span class="tlog-col-notes tlog-notes-text">
+        {{ act.notes }}
+        {% if has_laps %}<button class="tlog-laps-toggle" aria-label="Toggle laps">Laps ▾</button>{% endif %}
+      </span>
+    </div>
+
+    {% if has_laps %}
+    <div class="tlog-laps-panel">
+      <table class="tlog-laps-table">
+        <thead>
+          <tr><th>#</th><th>Dist</th><th>Time</th><th>Pace</th><th>HR</th></tr>
+        </thead>
+        <tbody>
+          {% for lap in act.laps %}
+          <tr>
+            <td class="tlog-lap-n">{{ lap.n }}</td>
+            <td>{{ lap.dist }} mi</td>
+            <td>{{ lap.time }}</td>
+            <td class="tlog-lap-pace">{{ lap.pace }}/mi</td>
+            <td>{{ lap.hr }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+(function() {
+  document.querySelectorAll('.tlog-row.has-laps').forEach(function(row) {
+    var btn   = row.querySelector('.tlog-laps-toggle');
+    var panel = row.querySelector('.tlog-laps-panel');
+    if (!btn || !panel) return;
+    row.addEventListener('mouseenter', function() {
+      if (window.innerWidth > 700) panel.classList.add('open');
+    });
+    row.addEventListener('mouseleave', function() {
+      if (window.innerWidth > 700 && !row.classList.contains('pinned')) {
+        panel.classList.remove('open');
+      }
+    });
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = panel.classList.toggle('open');
+      row.classList.toggle('pinned', open);
+      btn.textContent = open ? 'Laps ▴' : 'Laps ▾';
+    });
+  });
+})();
+</script>

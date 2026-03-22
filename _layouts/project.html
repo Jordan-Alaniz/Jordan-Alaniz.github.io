@@ -12,6 +12,7 @@ layout: default
         <span class="here">{{ page.title }}</span>
       </nav>
       <span class="page-eyebrow">Project</span>
+      {% if page.status %}<span class="status-badge status-{{ page.status | downcase | replace: ' ', '-' }}" style="margin-bottom:.75rem;display:inline-block;">{{ page.status }}</span>{% endif %}
       <h1 class="page-title">{{ page.title }}</h1>
       {% if page.excerpt %}<p class="page-subtitle">{{ page.excerpt }}</p>{% endif %}
       {% if page.tags.size > 0 %}

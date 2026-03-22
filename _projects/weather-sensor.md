@@ -2,6 +2,7 @@
 title: "Weather Sensor System"
 excerpt: "Programmed and built a weather sensor node as part of a larger distributed sensor system."
 date: 2024-03-01
+status: "Complete"
 tags:
   - Hardware
   - Programming

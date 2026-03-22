@@ -2,16 +2,63 @@
 layout: default
 ---
 <section class="hero">
-  <div class="hero-inner">
-    <p class="hero-eyebrow">ASCTE &middot; Class of 2027 &middot; Huntsville, AL</p>
-    <h1 class="hero-headline">
-      Disciplined.<br>
-      Curious.<br>
-      <strong>Ready.</strong>
-    </h1>
-    <p class="hero-tagline">Junior at ASCTE with a 4.29 GPA and a Wilderness First Responder certification. I compete in track and cross country, and I'm exploring fire, EMS, nursing, and cybersecurity as possible directions. I'm working on being prepared for wherever I end up.</p>
+  <div class="hero-inner hero-split">
+    <div class="hero-text-col">
+      <p class="hero-eyebrow">ASCTE &middot; Class of 2027 &middot; Huntsville, AL</p>
+      <h1 class="hero-headline">
+        Disciplined.<br>
+        Curious.<br>
+        <strong>Ready.</strong>
+      </h1>
+      <p class="hero-tagline">Junior at ASCTE with a 4.29 GPA and a Wilderness First Responder certification. I compete in track and cross country, and I'm exploring fire, EMS, nursing, and cybersecurity as possible directions. I'm working on being prepared for wherever I end up.</p>
+    </div>
+    <div class="hero-photo-col">
+      <div class="hero-photo-frame">
+        <div class="hero-slideshow" id="hero-slideshow">
+          <img src="{{ '/assets/images/hero_1.jpg' | relative_url }}" alt="Rock climbing" class="hero-slide active">
+          <img src="{{ '/assets/images/hero_2.jpg' | relative_url }}" alt="Kayaking"      class="hero-slide">
+          <img src="{{ '/assets/images/hero_3.jpg' | relative_url }}" alt="Rappelling"    class="hero-slide">
+        </div>
+        <div class="hero-slide-dots" id="hero-dots">
+          <button class="hero-dot active" data-i="0" aria-label="Slide 1"></button>
+          <button class="hero-dot"        data-i="1" aria-label="Slide 2"></button>
+          <button class="hero-dot"        data-i="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+(function(){
+  var frame  = document.getElementById('hero-slideshow');
+  var dotBox = document.getElementById('hero-dots');
+  if (!frame || !dotBox) return;
+
+  var slides = frame.querySelectorAll('.hero-slide');
+  var dots   = dotBox.querySelectorAll('.hero-dot');
+  if (slides.length < 2) return;
+
+  var cur = 0, timer;
+
+  function go(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = ((n % slides.length) + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+
+  function start() { timer = setInterval(function(){ go(cur + 1); }, 4500); }
+  function stop()  { clearInterval(timer); }
+
+  dots.forEach(function(d, i) {
+    d.addEventListener('click', function(){ stop(); go(i); start(); });
+  });
+
+  start();
+})();
+</script>
 
 <section class="home-highlights">
   <div class="container">

@@ -1,0 +1,44 @@
+name: Sync Garmin Training Log
+
+on:
+  schedule:
+    # Runs at 6:00 AM UTC = 1:00 AM CT — after most morning runs are synced
+    - cron: '0 6 * * *'
+  workflow_dispatch:   # lets you trigger manually from the Actions tab
+
+permissions:
+  contents: write      # needed to commit _data/training_log.json
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install garminconnect
+
+      - name: Fetch Garmin data
+        env:
+          GARMIN_EMAIL:      ${{ secrets.GARMIN_EMAIL }}
+          GARMIN_PASSWORD:   ${{ secrets.GARMIN_PASSWORD }}
+          # Optional — use for MFA-protected accounts (see README for setup)
+          GARMIN_TOKENSTORE: ${{ secrets.GARMIN_TOKENSTORE }}
+        run: python scripts/fetch_garmin.py
+
+      - name: Commit updated training log (if changed)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/training_log.json
+          git diff --staged --quiet && echo "No changes." || (
+            git commit -m "chore: sync garmin training log [skip ci]" &&
+            git push
+          )
