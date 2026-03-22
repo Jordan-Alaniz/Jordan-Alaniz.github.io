@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span>/</span>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <span>/</span>
+        <span class="here">{{ page.title }}</span>
+      </nav>
+      <h1 class="page-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+        {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="content-body">
+    <div class="content-prose">{{ content }}</div>
+  </div>
+</article>

@@ -1,7 +1,6 @@
 ---
+layout: blog
 title: Blog
 permalink: /blog/
-layout: posts
+page_bg: blog
 ---
-
-Short technical notes, design reflections, and explanations of things I’ve learned while building projects.

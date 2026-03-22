@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+</head>
+<body>
+{% include page-bg.html %}
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="{{ '/academics/' | relative_url }}"
+        {% if page.url contains '/academics' %}class="active"{% endif %}>Academics</a></li>
+      <li><a href="{{ '/athletics/' | relative_url }}"
+        {% if page.url contains '/athletics' %}class="active"{% endif %}>Athletics</a></li>
+      <li><a href="{{ '/service/' | relative_url }}"
+        {% if page.url contains '/service' %}class="active"{% endif %}>Service</a></li>
+      <li><a href="{{ '/field/' | relative_url }}"
+        {% if page.url contains '/field' %}class="active"{% endif %}>Field</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}"
+        {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+{{ content }}
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <span class="footer-name">Jordan Alaniz</span>
+    <div class="footer-links">
+      <a href="mailto:{{ site.email }}">Email</a>
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="{{ site.milesplit_url }}" target="_blank" rel="noopener">MileSplit</a>
+      <a href="{{ '/assets/files/Jordan_Alaniz_Academic_Resume.pdf' | relative_url }}" target="_blank">Resume PDF</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Mobile nav ── */
+  var btn = document.getElementById('nav-toggle');
+  var menu = document.getElementById('nav-links');
+  btn.addEventListener('click', function() {
+    var open = menu.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(e) {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', false);
+    }
+  });
+
+  /* ── Scroll reveal ── */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-group > *');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  /* ── Bar chart animation ── */
+  var charts = document.querySelectorAll('.chart-wrap');
+  if ('IntersectionObserver' in window && charts.length) {
+    var cio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var wrap = e.target;
+        wrap.classList.add('animated');
+        wrap.querySelectorAll('.chart-bar').forEach(function(bar, i) {
+          var h = parseInt(bar.getAttribute('data-h'), 10);
+          setTimeout(function() {
+            bar.setAttribute('height', h);
+            bar.setAttribute('y', 170 - h);
+          }, i * 80);
+        });
+        cio.unobserve(wrap);
+      });
+    }, { threshold: 0.3 });
+    charts.forEach(function(c) { cio.observe(c); });
+  } else {
+    charts.forEach(function(wrap) {
+      wrap.classList.add('animated');
+      wrap.querySelectorAll('.chart-bar').forEach(function(bar) {
+        var h = parseInt(bar.getAttribute('data-h'), 10);
+        bar.setAttribute('height', h);
+        bar.setAttribute('y', 170 - h);
+      });
+    });
+  }
+</script>
+
+</body>
+</html>

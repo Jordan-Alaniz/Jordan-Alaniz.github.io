@@ -1,0 +1,382 @@
+<div class="chart-shell">
+  <div class="chart-tabs" id="chart-tabs"></div>
+  <div class="chart-summary-bar" id="chart-summary-bar"></div>
+  <div class="chart-canvas-wrap">
+    <canvas id="athletics-chart"></canvas>
+  </div>
+  <div class="chart-footer-row">
+    <div class="chart-season-key">
+      <span class="csk-item"><span class="csk-swatch xc"></span>XC</span>
+      <span class="csk-item"><span class="csk-swatch indoor"></span>Indoor</span>
+      <span class="csk-item"><span class="csk-swatch outdoor"></span>Outdoor</span>
+      <span class="csk-item csk-pr-key"><span class="csk-star">&#9733;</span>PR</span>
+    </div>
+    <div class="chart-race-count" id="chart-race-count"></div>
+  </div>
+  <div class="chart-venue-note" id="chart-venue-note" style="display:none;">
+    <span class="cvi">&#8505;</span>
+    <span><strong>Indoor vs. Outdoor:</strong> Diamond points = indoor track, circles = outdoor/XC. Times aren&#39;t directly comparable &mdash; indoor tracks are 200m so a gap between venues is normal.</span>
+  </div>
+  <div class="chart-injury-note">
+    <span class="cii">&#9888;</span>
+    <span><strong>Sophomore XC (Fall 2024):</strong> Times were affected by injury &mdash; the dip and recovery are both part of the picture.</span>
+  </div>
+</div>
+<style>
+.chart-shell{margin-bottom:2.5rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}
+.chart-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.chart-tab{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:7px 14px 8px;border-radius:7px;border:1.5px solid #ddd;background:#fff;cursor:pointer;transition:all .17s ease;font-family:inherit;text-align:left;min-width:90px;}
+.chart-tab:hover{border-color:#aaa;background:#fafafa;}
+.chart-tab .tab-event{font-size:.75rem;font-weight:700;color:#666;letter-spacing:.02em;line-height:1;}
+.chart-tab .tab-pr{font-size:.7rem;font-weight:500;color:#999;line-height:1;font-variant-numeric:tabular-nums;}
+.chart-tab.active .tab-event{color:#fff;}
+.chart-tab.active .tab-pr{color:rgba(255,255,255,.75);}
+.chart-summary-bar{display:flex;align-items:center;flex-wrap:wrap;gap:6px 20px;background:#f4f6f8;border:1px solid #e0e5ea;border-radius:8px;padding:10px 16px;margin-bottom:10px;}
+.csb-item{display:flex;flex-direction:column;gap:1px;}
+.csb-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;line-height:1;}
+.csb-value{font-size:.92rem;font-weight:700;color:#1a1a1a;line-height:1.2;font-variant-numeric:tabular-nums;}
+.csb-value.is-pr{color:#b8860b;}.csb-value.is-imp{color:#2a6e3f;}
+.csb-divider{width:1px;height:30px;background:#dde2e8;align-self:center;}
+.chart-canvas-wrap{background:#fff;border:1px solid #e4e4e2;border-radius:10px;padding:1.1rem 1rem .7rem;margin-bottom:8px;}
+.chart-footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
+.chart-season-key{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;}
+.csk-item{display:flex;align-items:center;gap:5px;font-size:.7rem;color:#666;}
+.csk-swatch{width:10px;height:10px;border-radius:2px;display:inline-block;}
+.csk-swatch.xc{background:rgba(100,160,80,.25);border:1px solid rgba(100,160,80,.5);}
+.csk-swatch.indoor{background:rgba(80,120,180,.2);border:1px solid rgba(80,120,180,.4);}
+.csk-swatch.outdoor{background:rgba(200,140,60,.2);border:1px solid rgba(200,140,60,.4);}
+.csk-star{color:#c8a000;font-size:.85rem;line-height:1;}.csk-pr-key{font-weight:600;}
+.chart-race-count{font-size:.72rem;color:#999;}
+.chart-venue-note,.chart-injury-note{display:flex;align-items:flex-start;gap:8px;font-size:.78rem;border-radius:7px;padding:.6rem .9rem;line-height:1.55;}
+.chart-venue-note{color:#2a4a6e;background:#eef3f8;border:1px solid #c0d0e0;margin-bottom:6px;}
+.chart-injury-note{color:#6b4a36;background:#fdf3ee;border:1px solid #e8cfc0;}
+.cvi,.cii{font-size:.85rem;margin-top:1px;flex-shrink:0;}
+@media(max-width:540px){.chart-tab{min-width:72px;padding:6px 10px 7px;}.chart-tab .tab-event{font-size:.7rem;}.chart-tab .tab-pr{font-size:.65rem;}.csb-divider{display:none;}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  function mmss(s){var m=Math.floor(s/60),sc=Math.round(s%60);return m+':'+(sc<10?'0':'')+sc;}
+  function moyr(obj){
+    var mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return mo[obj.m-1]+" '"+String(obj.y).slice(2);
+  }
+  function venueOf(s){
+    if(s.slice(0,3)==='out') return 'outdoor';
+    if(s.slice(0,2)==='in')  return 'indoor';
+    return 'xc';
+  }
+  function isMixed(pts){
+    for(var i=0;i<pts.length;i++){
+      if(venueOf(pts[i].s)==='indoor') return true;
+    }
+    return false;
+  }
+
+  var SDEF={
+    xc23:{label:"Fr XC '23",   c:'rgba(100,160,80,.13)'},
+    xc24:{label:"Soph XC '24", c:'rgba(240,130,70,.10)',injury:true},
+    xc25:{label:"Jr XC '25",   c:'rgba(100,160,80,.13)'},
+    out25:{label:"Outdoor '25",c:'rgba(200,140,60,.11)'},
+    in26: {label:"Indoor '26", c:'rgba(80,120,180,.10)'},
+    out26:{label:"Outdoor '26",c:'rgba(200,140,60,.11)'}
+  };
+
+  var events=[
+    {id:'xc5k',  label:'5K XC',  color:'#3d6e8a', pr:'19:34',
+     pts:[
+       {y:1297,s:'xc23',d:{y:2023,m:9}, n:'Black & Gold Classic'},
+       {y:1335,s:'xc23',d:{y:2023,m:10},n:'Randolph Invitational'},
+       {y:1296,s:'xc23',d:{y:2023,m:10},n:'James Clemens Festival'},
+       {y:1264,s:'xc23',d:{y:2023,m:11},n:'AHSAA State (Fr)'},
+       {y:1303,s:'xc24',d:{y:2024,m:9}, n:'Chickasaw Trails'},
+       {y:1388,s:'xc24',d:{y:2024,m:9}, n:'Southern Showcase'},
+       {y:1313,s:'xc24',d:{y:2024,m:9}, n:'Athens Bible'},
+       {y:1218,s:'xc25',d:{y:2025,m:9}, n:'Southern Showcase'},
+       {y:1248,s:'xc25',d:{y:2025,m:9}, n:'On Twilight'},
+       {y:1224,s:'xc25',d:{y:2025,m:10},n:'Athens Bible'},
+       {y:1195,s:'xc25',d:{y:2025,m:10},n:'Last Chance'},
+       {y:1174,s:'xc25',d:{y:2025,m:10},n:'AHSAA 3A Section 4'},
+       {y:1192,s:'xc25',d:{y:2025,m:11},n:'AHSAA XC State'}
+     ]},
+    {id:'mile2', label:'2 Mile',  color:'#5a8a6e', pr:'13:06',
+     pts:[
+       {y:881,s:'xc23',d:{y:2023,m:9},n:'Chickasaw Trails (2.1mi)'},
+       {y:834,s:'xc23',d:{y:2023,m:9},n:'Southern Showcase'},
+       {y:847,s:'xc24',d:{y:2024,m:8},n:'BJXC First Chance'},
+       {y:786,s:'xc25',d:{y:2025,m:8},n:'BJXC First Chance'}
+     ]},
+    {id:'m3200', label:'3200m',   color:'#7a5a3d', pr:'11:40',
+     pts:[
+       {y:750,s:'out25',d:{y:2025,m:4}, n:'AHSAA Sectionals'},
+       {y:700,s:'in26', d:{y:2026,m:1}, n:'Last Chance #1'},
+       {y:740,s:'out26',d:{y:2026,m:2}, n:'James Clemens Early Bird'},
+       {y:720,s:'out26',d:{y:2026,m:2}, n:'Raider Invitational'},
+       {y:712,s:'out26',d:{y:2026,m:3}, n:'James Clemens Invitational'}
+     ]},
+    {id:'m1600', label:'1600m',   color:'#8a4a6e', pr:'5:15',
+     pts:[
+       {y:340,s:'out25',d:{y:2025,m:4}, n:'AHSAA Sectionals'},
+       {y:330,s:'in26', d:{y:2025,m:12},n:'Holiday Invitational'},
+       {y:316,s:'in26', d:{y:2026,m:1}, n:'MLK Indoor Classic'},
+       {y:315,s:'in26', d:{y:2026,m:1}, n:'Last Chance #1'},
+       {y:344,s:'out26',d:{y:2026,m:2}, n:'James Clemens Early Bird'},
+       {y:335,s:'out26',d:{y:2026,m:2}, n:'Raider Invitational'},
+       {y:318,s:'out26',d:{y:2026,m:3}, n:'James Clemens Invitational'}
+     ]},
+    {id:'m800',  label:'800m',    color:'#4a6e8a', pr:'2:25',
+     pts:[
+       {y:153,s:'out25',d:{y:2025,m:4}, n:'Bob Jones Invitational'},
+       {y:147,s:'in26', d:{y:2025,m:12},n:'Holiday Invitational'},
+       {y:145,s:'out26',d:{y:2026,m:3}, n:'James Clemens'}
+     ]}
+  ];
+
+  var active='xc5k';
+  var chart=null;
+
+  function prIdx(pts){
+    var mi=0;
+    for(var i=1;i<pts.length;i++){if(pts[i].y<pts[mi].y)mi=i;}
+    return mi;
+  }
+  function improvement(pts){
+    if(pts.length<2)return null;
+    var first=pts[0].y, best=pts[prIdx(pts)].y;
+    return{from:first,to:best,pct:((first-best)/first*100).toFixed(1)};
+  }
+
+  /* Season bands plugin */
+  var seasonPlugin={
+    id:'seasons',
+    beforeDraw:function(ch){
+      var ev=events.find(function(e){return e.id===active;});
+      var ctx=ch.ctx,xs=ch.scales.x,ys=ch.scales.y;
+      var spans=[],cur=null;
+      ev.pts.forEach(function(p,i){
+        if(!cur||p.s!==cur.key){cur={key:p.s,start:i,end:i};spans.push(cur);}
+        else{cur.end=i;}
+      });
+      ctx.save();
+      spans.forEach(function(sp){
+        var def=SDEF[sp.key];
+        if(!def)return;
+        var x0=xs.getPixelForValue(sp.start-0.5);
+        var x1=xs.getPixelForValue(sp.end+0.5);
+        ctx.fillStyle=def.c;
+        ctx.fillRect(x0,ys.top,x1-x0,ys.bottom-ys.top);
+        if(def.injury){
+          ctx.strokeStyle='rgba(200,100,50,.3)';
+          ctx.lineWidth=1;ctx.setLineDash([4,4]);
+          ctx.strokeRect(x0,ys.top,x1-x0,ys.bottom-ys.top);
+          ctx.setLineDash([]);
+        }
+        ctx.font='bold 9px -apple-system,sans-serif';
+        ctx.fillStyle='rgba(80,80,80,.5)';
+        ctx.textAlign='center';
+        ctx.fillText(def.label,(x0+x1)/2,ys.bottom-6);
+      });
+      ctx.restore();
+    }
+  };
+
+  /* PR gold ring + star label plugin — searches all datasets */
+  var prPlugin={
+    id:'prAnnot',
+    afterDraw:function(ch){
+      var ev=events.find(function(e){return e.id===active;});
+      var bestY=ev.pts[prIdx(ev.pts)].y;
+      var found=null;
+      for(var di=0;di<ch.data.datasets.length&&!found;di++){
+        var meta=ch.getDatasetMeta(di);
+        var ddata=ch.data.datasets[di].data;
+        for(var pi=0;pi<ddata.length&&!found;pi++){
+          if(ddata[pi]&&ddata[pi].y===bestY&&meta.data[pi]){
+            found=meta.data[pi];
+          }
+        }
+      }
+      if(!found)return;
+      var ctx=ch.ctx;
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(found.x,found.y,10,0,Math.PI*2);
+      ctx.strokeStyle='#c8a000';ctx.lineWidth=2.5;ctx.stroke();
+      ctx.font='bold 10px -apple-system,sans-serif';
+      ctx.fillStyle='#c8a000';ctx.textAlign='center';
+      ctx.fillText('\u2605 PR',found.x,found.y-16);
+      ctx.restore();
+    }
+  };
+
+  function render(){
+    var ev=events.find(function(e){return e.id===active;});
+    var mi=prIdx(ev.pts);
+    var imp=improvement(ev.pts);
+    var mixed=isMixed(ev.pts);
+    var bestY=ev.pts[mi].y;
+
+    /* Summary bar */
+    var bar=document.getElementById('chart-summary-bar');
+    if(bar){
+      bar.innerHTML=imp ?
+        '<div class="csb-item"><span class="csb-label">First race</span><span class="csb-value">'+mmss(imp.from)+'</span></div>'+
+        '<div class="csb-divider"></div>'+
+        '<div class="csb-item"><span class="csb-label">Current PR</span><span class="csb-value is-pr">\u2605 '+mmss(imp.to)+'</span></div>'+
+        '<div class="csb-divider"></div>'+
+        '<div class="csb-item"><span class="csb-label">Improvement</span><span class="csb-value is-imp">\u25bc '+imp.pct+'%</span></div>'+
+        '<div class="csb-divider"></div>'+
+        '<div class="csb-item"><span class="csb-label">Races</span><span class="csb-value">'+ev.pts.length+'</span></div>'
+        : '';
+    }
+
+    var rc=document.getElementById('chart-race-count');
+    if(rc) rc.textContent=ev.pts.length+' races \u00b7 hover for details';
+
+    var vn=document.getElementById('chart-venue-note');
+    if(vn) vn.style.display=mixed?'':'none';
+
+    /* Split pts into consecutive venue runs so lines never cross venue boundaries.
+       Each run becomes its own dataset — no nulls, just real points at correct x indices. */
+    var runs=[];
+    ev.pts.forEach(function(p,i){
+      var v=venueOf(p.s);
+      var last=runs[runs.length-1];
+      if(!last||last.venue!==v){runs.push({venue:v,pts:[]});}
+      runs[runs.length-1].pts.push({x:i,y:p.y,n:p.n,d:p.d,venue:v,origIdx:i});
+    });
+
+    var datasets=runs.map(function(run){
+      var indoor=run.venue==='indoor';
+      var ptBG=run.pts.map(function(p){
+        if(p.origIdx===mi) return '#c8a000';
+        return indoor?'#ffffff':ev.color;
+      });
+      var ptBC=run.pts.map(function(p){
+        if(p.origIdx===mi) return '#c8a000';
+        return indoor?ev.color:'#ffffff';
+      });
+      var ptBW=run.pts.map(function(p){ return p.origIdx===mi?2:indoor?2.5:2; });
+      var ptR=run.pts.map(function(p){ return p.origIdx===mi?9:7; });
+      var ptStyle=run.pts.map(function(){ return indoor?'rectRot':'circle'; });
+      return{
+        label:indoor?'Indoor':'Outdoor',
+        data:run.pts,
+        borderColor:indoor?ev.color+'bb':ev.color,
+        backgroundColor:'transparent',
+        pointBackgroundColor:ptBG,
+        pointBorderColor:ptBC,
+        pointBorderWidth:ptBW,
+        pointRadius:ptR,
+        pointHoverRadius:11,
+        pointStyle:ptStyle,
+        borderWidth:indoor?2:2.5,
+        borderDash:indoor?[5,4]:[],
+        tension:0,
+        fill:false,
+        spanGaps:false
+      };
+    });
+
+    var canvasEl=document.getElementById('athletics-chart');
+    if(!canvasEl)return;
+    var ctx2=canvasEl.getContext('2d');
+    if(chart){chart.destroy();chart=null;}
+
+    chart=new Chart(ctx2,{
+      type:'line',
+      data:{datasets:datasets},
+      plugins:[seasonPlugin,prPlugin],
+      options:{
+        responsive:true,
+        interaction:{mode:'nearest',intersect:false},
+        scales:{
+          x:{
+            type:'linear',
+            min:-0.5,
+            max:ev.pts.length-0.5,
+            ticks:{display:false},
+            grid:{display:false},
+            border:{display:false}
+          },
+          y:{
+            reverse:true,
+            ticks:{callback:function(v){return mmss(v);},maxTicksLimit:7,font:{size:11},color:'#999'},
+            grid:{color:'#f2f2f0'},
+            title:{display:true,text:'finish time  (lower = faster)',font:{size:10.5},color:'#bbb'}
+          }
+        },
+        plugins:{
+          legend:{
+            display:true,position:'top',align:'end',
+            labels:{
+              usePointStyle:true,font:{size:11},color:'#666',
+              generateLabels:function(){
+                var items=[
+                  {text:ev.label,fillStyle:ev.color,strokeStyle:ev.color,lineWidth:0,pointStyle:'circle'},
+                  {text:'PR',fillStyle:'#c8a000',strokeStyle:'#c8a000',lineWidth:0,pointStyle:'circle'}
+                ];
+                if(mixed){
+                  items.push({text:'Indoor',fillStyle:'#ffffff',strokeStyle:ev.color,lineWidth:2,pointStyle:'rectRot'});
+                }
+                return items;
+              }
+            }
+          },
+          tooltip:{
+            backgroundColor:'rgba(20,20,20,.88)',
+            titleColor:'#fff',bodyColor:'rgba(255,255,255,.8)',
+            padding:10,cornerRadius:7,
+            callbacks:{
+              title:function(items){
+                var r=items&&items[0]?items[0].raw:null;
+                return r&&r.n?r.n:'';
+              },
+              label:function(item){
+                var r=item.raw;
+                if(!r)return '';
+                var prTag=r.y===bestY?'  \u2605 PR':'';
+                var venueTag=r.venue==='indoor'?' (indoor)':r.venue==='outdoor'?' (outdoor)':'';
+                return ev.label+': '+mmss(r.y)+venueTag+prTag;
+              },
+              afterLabel:function(item){
+                var r=item.raw;
+                return r&&r.d?moyr(r.d):'';
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  /* Build tabs */
+  var tabWrap=document.getElementById('chart-tabs');
+  if(tabWrap){
+    events.forEach(function(evItem){
+      var btn=document.createElement('button');
+      btn.className='chart-tab'+(evItem.id===active?' active':'');
+      btn.dataset.id=evItem.id;
+      btn.innerHTML='<span class="tab-event">'+evItem.label+'</span>'
+                   +'<span class="tab-pr">PR '+evItem.pr+'</span>';
+      if(evItem.id===active){btn.style.background=evItem.color;btn.style.borderColor=evItem.color;}
+      btn.addEventListener('click',function(){
+        if(active===evItem.id)return;
+        active=evItem.id;
+        tabWrap.querySelectorAll('.chart-tab').forEach(function(b){
+          var eid=b.dataset.id;
+          var e2=events.find(function(x){return x.id===eid;});
+          var on=eid===active;
+          b.classList.toggle('active',on);
+          b.style.background =on?e2.color:'';
+          b.style.borderColor=on?e2.color:'';
+        });
+        render();
+      });
+      tabWrap.appendChild(btn);
+    });
+  }
+
+  render();
+})();
+</script>

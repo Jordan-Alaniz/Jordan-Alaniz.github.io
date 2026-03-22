@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<article>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span>/</span>
+        <span class="here">Blog</span>
+      </nav>
+      <h1 class="page-title">Blog</h1>
+      <p class="page-subtitle">Notes on things I'm learning — algorithms, hardware, training, and whatever else is on my mind.</p>
+    </div>
+  </div>
+  <div class="content-body">
+    {% if site.posts.size > 0 %}
+    <div class="post-list">
+      {% for post in site.posts %}
+      <div class="post-item">
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div>
+          <a href="{{ post.url | relative_url }}" class="post-item-title">{{ post.title }}</a>
+          {% if post.excerpt %}
+          <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="color:#555;padding:2rem 0;">No posts yet — check back soon.</p>
+    {% endif %}
+  </div>
+</article>

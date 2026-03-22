@@ -1,35 +1,20 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: Jordan Alaniz
 email: jordan.alaniz@outlook.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Student portfolio featuring projects, writing, and experiments in engineering and software.
-twitter_username:
-github_username: Jordan-Alaniz
-remote_theme: "mmistakes/minimal-mistakes@4.26.2"
-minimal_mistakes_skin: "dark"
-search: false
+description: >-
+  Junior at ASCTE — exploring fire, EMS, nursing, and cybersecurity.
+  Varsity distance runner. Wilderness First Responder.
+url: "https://jordan-alaniz.github.io"
+baseurl: ""
 
-# Build settings
+github_username: Jordan-Alaniz
+linkedin_username: jordan-alaniz
+milesplit_url: "https://al.milesplit.com/athletes/13835251-jordan-alaniz"
+gpa: "4.29"
+sat: "1310"
+act: "32"
+
+permalink: /blog/:title/
 markdown: kramdown
-# Outputting
-permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
@@ -39,80 +24,35 @@ collections:
     output: true
     permalink: /projects/:path/
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# Plugins (previously gems:)
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jemoji
-  - jekyll-include-cache
-
-author:
-  name   : "Jordan Alaniz"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "High school student interested in engineering, simulation, and software development."
-  links:
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/jordan-alaniz/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/jordan-alaniz"
-
-footer:
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:jordan.alaniz@outlook.com"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/jordan-alaniz-683b65387/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/jordan-alaniz"
-
 defaults:
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: false
-      comments: false
-      share: false
-      related: false
-  # _pages
+      layout: post
+      page_bg: blog
   - scope:
       path: "_pages"
       type: pages
     values:
-      layout: single
-      author_profile: true
-  # _projects
+      layout: page
   - scope:
       path: ""
       type: projects
     values:
-      layout: single
-      author_profile: true
-      share: false
+      layout: project
+      page_bg: academics
 
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+timezone: America/Chicago
+
+

@@ -2,6 +2,10 @@
 title: "Calculation Website"
 excerpt: "Built a functional multi-calculator website using HTML, CSS, and JavaScript."
 date: 2023-11-01
+header:
+  actions:
+    - label: "View Live Site"
+      url: "https://jordan-alaniz.github.io/"
 tags:
   - HTML
   - CSS
