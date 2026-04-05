@@ -25,8 +25,8 @@ permalink: /athletics/
   <div class="stat-cards">
     <div class="stat-card">
       <div class="stat-card-val">11:40 <span class="stat-card-unit">3200m</span></div>
-      <div class="stat-card-lbl">10th in Class 3A · Indoor</div>
-      <div class="stat-card-delta">↓ 6.6% this season</div>
+      <div class="stat-card-lbl">Season PR · 2026 Outdoor</div>
+      <div class="stat-card-delta">↓ 6.7% this season</div>
     </div>
     <div class="stat-card">
       <div class="stat-card-val">19:34 <span class="stat-card-unit">5K XC</span></div>
@@ -34,9 +34,9 @@ permalink: /athletics/
       <div class="stat-card-delta">↓ 9.9% this season</div>
     </div>
     <div class="stat-card">
-      <div class="stat-card-val">5:15 <span class="stat-card-unit">1600m</span></div>
-      <div class="stat-card-lbl">24th in Class 3A · Indoor</div>
-      <div class="stat-card-delta">↓ 7.3% this season</div>
+      <div class="stat-card-val">5:11 <span class="stat-card-unit">1600m</span></div>
+      <div class="stat-card-lbl">Season PR · 2026 Outdoor</div>
+      <div class="stat-card-delta">↓ 8.5% this season</div>
     </div>
   </div>
 
@@ -55,17 +55,17 @@ permalink: /athletics/
       <span class="sort-col" data-col="2" data-type="text" aria-sort="none">Rank <span class="sort-icon">⇅</span></span>
     </div>
     <div class="pr-tbody">
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m (indoor)" data-time="11:40.68" data-rank="10th · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m" data-time="11:40.53" data-rank="7th · Bob Jones">
         <span class="ruled-num">01</span>
-        <span class="ruled-name">3200m (indoor)</span>
-        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:40.68</span>
-        <span class="ruled-badge">10th · 3A</span>
+        <span class="ruled-name">3200m</span>
+        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:40.53</span>
+        <span class="ruled-badge">7th · Bob Jones</span>
       </div>
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m (indoor)" data-time="5:15.81" data-rank="24th · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m" data-time="5:11.67" data-rank="21st · Bob Jones">
         <span class="ruled-num">02</span>
-        <span class="ruled-name">1600m (indoor)</span>
-        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">5:15.81</span>
-        <span class="ruled-badge">24th · 3A</span>
+        <span class="ruled-name">1600m</span>
+        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">5:11.67</span>
+        <span class="ruled-badge">21st · Bob Jones</span>
       </div>
       <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="800m" data-time="2:25.16" data-rank="30th · 3A">
         <span class="ruled-num">03</span>

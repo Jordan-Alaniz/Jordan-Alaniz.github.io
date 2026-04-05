@@ -40,17 +40,17 @@ permalink: /recruit/
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">01</span>
-      <span class="ruled-name">3200m (Indoor)</span>
-      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">11:40.68</span>
-      <span class="ruled-meta">↓ 6.6% this season</span>
-      <span class="ruled-badge">10th · 3A</span>
+      <span class="ruled-name">3200m</span>
+      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">11:40.53</span>
+      <span class="ruled-meta">↓ 6.7% this season</span>
+      <span class="ruled-badge">7th · Bob Jones</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">02</span>
-      <span class="ruled-name">1600m (Indoor)</span>
-      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">5:15.81</span>
-      <span class="ruled-meta">↓ 7.3% this season</span>
-      <span class="ruled-badge">24th · 3A</span>
+      <span class="ruled-name">1600m</span>
+      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">5:11.67</span>
+      <span class="ruled-meta">↓ 8.5% this season</span>
+      <span class="ruled-badge">21st · Bob Jones</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">03</span>
