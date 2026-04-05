@@ -8,13 +8,25 @@
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="{{ site.title }}">
+  <meta property="og:title"       content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url"         content="{{ page.url | absolute_url }}">
+  <meta property="og:image"       content="{{ '/assets/images/bio-photo.jpg' | absolute_url }}">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image"       content="{{ '/assets/images/bio-photo.jpg' | absolute_url }}">
 </head>
 <body>
 {% include page-bg.html %}
 
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a class="nav-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="nav-brand{% if page.url == '/' %} nav-brand--active{% endif %}" href="{{ '/' | relative_url }}">{{ site.title }}</a>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -41,9 +53,9 @@
 
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
-    <span class="footer-name">Jordan Alaniz</span>
+    <span class="footer-name">Jordan Alaniz &copy; {{ 'now' | date: '%Y' }}</span>
     <div class="footer-links">
-      <a href="mailto:{{ site.email }}">Email</a>
+      <a href="mailto:{{ site.email }}">Email</a><button class="copy-email-btn" data-email="{{ site.email }}" title="Copy email address" aria-label="Copy email address">⎘</button>
       <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a>
       <a href="{{ site.milesplit_url }}" target="_blank" rel="noopener">MileSplit</a>
@@ -54,6 +66,31 @@
 </footer>
 
 <script>
+  /* ── Back to top ── */
+  (function() {
+    var btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    function syncBtn() { btn.classList.toggle('visible', window.scrollY > 300); }
+    window.addEventListener('scroll', syncBtn, { passive: true });
+    btn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    syncBtn();
+  })();
+
+  /* ── Copy email ── */
+  (function() {
+    document.querySelectorAll('.copy-email-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var email = btn.getAttribute('data-email');
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(email).then(function() {
+          btn.textContent = '✓';
+          btn.classList.add('copied');
+          setTimeout(function() { btn.textContent = '⎘'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    });
+  })();
+
   /* ── Mobile nav ── */
   var btn = document.getElementById('nav-toggle');
   var menu = document.getElementById('nav-links');
@@ -113,6 +150,8 @@
     });
   }
 </script>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Scroll to top">↑</button>
 
 </body>
 </html>

@@ -43,7 +43,9 @@ permalink: /service/
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">ASCTE Peer Helpers</span><span class="ruled-badge">Active</span></div>
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Residential Activities Council</span><span class="ruled-badge">Member</span></div>
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Radio Club</span><span class="ruled-badge">Active</span></div>
-    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Drama / Theatre Technology</span><span class="ruled-badge">Active</span></div>
+    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Drama / Theatre Technology</span><span class="ruled-badge">2023-25</span></div>
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Junior Fire Academy Training</span><span class="ruled-badge">Completed</span></div>
+    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">ASCTE Ambassador Program</span><span class="ruled-badge">2024-25</span></div>
+    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Civil Air Patrol Cadet Program</span><span class="ruled-badge">2022-24</span></div>
   </div>
 </div>

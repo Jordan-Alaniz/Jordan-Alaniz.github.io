@@ -24,12 +24,14 @@ permalink: /academics/
     </div>
   </div>
 
-  <span class="section-label">Current AP courses</span>
+  <span class="section-label">Current / Past AP courses</span>
   <div class="info-grid" style="margin-bottom:2.5rem;border:1px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;">
     <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">AP Computer Science A</div><div class="info-cell-sub">Java · algorithms · OOP</div></div></div>
-    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">AP Calculus</div><div class="info-cell-sub">Derivatives · integration</div></div></div>
+    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">AP Calculus AB/BC</div><div class="info-cell-sub">Derivatives · integration</div></div></div>
     <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">AP Psychology</div><div class="info-cell-sub">Behavioral science</div></div></div>
-    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">AP Language</div><div class="info-cell-sub">Completed sophomore year</div></div></div>
+    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">AP English Language Comprehention</div><div class="info-cell-sub">Completed sophomore year · Score: 4</div></div></div>
+    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">AP Computer Science Principles</div><div class="info-cell-sub">Completed freshman year · Score: 4</div></div></div>
+    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">AP Statistics</div><div class="info-cell-sub">Data collection · data analysis</div></div></div>
   </div>
   <span class="section-label">Projects</span>
   <div class="project-grid">

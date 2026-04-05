@@ -56,7 +56,29 @@ layout: default
     d.addEventListener('click', function(){ stop(); go(i); start(); });
   });
 
+  /* Keyboard left/right arrow support */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft')  { stop(); go(cur - 1); start(); }
+    if (e.key === 'ArrowRight') { stop(); go(cur + 1); start(); }
+  });
+
   start();
+})();
+
+/* Referrer-based active highlight card (#6) */
+(function() {
+  try {
+    var ref = document.referrer;
+    if (!ref) return;
+    var map = { '/academics/': 'a[href*="/academics/"]', '/athletics/': 'a[href*="/athletics/"]',
+                '/service/':   'a[href*="/service/"]',   '/field/':     'a[href*="/field/"]' };
+    Object.keys(map).forEach(function(path) {
+      if (ref.indexOf(path) !== -1) {
+        var card = document.querySelector(map[path] + '.highlight-card');
+        if (card) card.classList.add('highlight-card--active');
+      }
+    });
+  } catch(e) {}
 })();
 </script>
 

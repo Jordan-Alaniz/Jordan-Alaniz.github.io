@@ -1838,3 +1838,219 @@ body.bg-recruit {
     border-bottom: 1px solid var(--border);
   }
 }
+
+/* ============================================================
+   BACK TO TOP BUTTON (#2)
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--acc);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .25s ease, transform .25s ease, background .15s;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover { background: var(--acc-mid); }
+
+/* ============================================================
+   COPY EMAIL BUTTON (#4)
+   ============================================================ */
+.copy-email-btn {
+  background: none;
+  border: 1px solid var(--border-dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: .75rem;
+  color: var(--tx3);
+  padding: 1px 5px;
+  margin-left: 3px;
+  transition: color .15s, border-color .15s, background .15s;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.copy-email-btn:hover { color: var(--acc); border-color: var(--acc); }
+.copy-email-btn.copied { color: #2d7a4d; border-color: #9fcfb5; background: #eaf3ee; }
+
+/* ============================================================
+   NAV BRAND ACTIVE STATE (#1 — home page active)
+   ============================================================ */
+.nav-brand--active { color: var(--acc) !important; }
+
+/* ============================================================
+   BLOG — READ TIME (#12)
+   ============================================================ */
+.post-read-time {
+  font-size: .75rem;
+  color: var(--tx3);
+  font-family: var(--mono);
+}
+
+.post-item .post-read-time {
+  display: block;
+  margin-top: .15rem;
+}
+
+/* ============================================================
+   POST READ TIME IN META BAR
+   ============================================================ */
+.post-meta .post-read-time { color: var(--tx3); }
+
+/* ============================================================
+   SORTABLE TABLE HEADERS (#8)
+   ============================================================ */
+.sort-col {
+  cursor: pointer;
+  user-select: none;
+  transition: color .15s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sort-col:hover { color: var(--acc); }
+.sort-col[aria-sort="ascending"],
+.sort-col[aria-sort="descending"] { color: var(--acc); }
+
+.sort-icon {
+  font-size: .65rem;
+  color: var(--tx3);
+  transition: color .15s;
+}
+
+.sort-col:hover .sort-icon,
+.sort-col[aria-sort="ascending"] .sort-icon,
+.sort-col[aria-sort="descending"] .sort-icon { color: var(--acc); }
+
+.sortable-hint {
+  font-size: .65rem;
+  font-weight: 400;
+  color: var(--tx3);
+  letter-spacing: 0;
+  text-transform: none;
+  margin-left: .5rem;
+}
+
+/* ============================================================
+   ATHLETICS SUB-NAV (#3)
+   ============================================================ */
+.subnav {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.subnav::-webkit-scrollbar { display: none; }
+
+.subnav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+}
+
+.subnav-link {
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--tx2);
+  padding: .65rem 1.1rem;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  transition: color .15s, border-color .15s;
+  display: inline-block;
+}
+
+.subnav-link:hover { color: var(--acc); text-decoration: none; }
+.subnav-link.active { color: var(--acc); border-bottom-color: var(--acc); }
+
+/* Anchor offset so sticky nav doesn't cover headings */
+.section-anchor {
+  display: block;
+  height: calc(var(--nav-h) + 40px);
+  margin-top: calc(-1 * (var(--nav-h) + 40px));
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* ============================================================
+   HIGHLIGHT CARD ACTIVE STATE (#6 — referrer)
+   ============================================================ */
+.highlight-card--active {
+  background: var(--acc-light) !important;
+  box-shadow: inset 0 0 0 2px var(--acc);
+}
+
+.highlight-card--active .highlight-label { color: var(--acc); }
+.highlight-card--active .highlight-arrow { color: var(--acc); transform: translateX(4px); }
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION (#10)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-slide { transition: none; }
+  .reveal, .reveal-group > * { opacity: 1; transform: none; transition: none; }
+  .chart-bar { transition: none; }
+  .back-to-top { transition: opacity .01ms; }
+  .tlog-laps-panel { transition: none; }
+}
+
+/* ============================================================
+   PR TABLE — numbered column hidden when sorted (uses flex)
+   ============================================================ */
+.pr-head {
+  display: grid !important;
+}
+
+.pr-head > span:first-child { display: block; }
+
+/* ============================================================
+   SUBNAV MOBILE
+   ============================================================ */
+@media (max-width: 640px) {
+  .subnav-inner { padding: 0 .75rem; }
+  .subnav-link  { padding: .6rem .8rem; font-size: .75rem; }
+}
+
+/* ============================================================
+   FOOTER — dynamic year already handled in Liquid
+   ensure footer-name has correct spacing with copyright
+   ============================================================ */
+.footer-name { letter-spacing: -0.01em; }
+

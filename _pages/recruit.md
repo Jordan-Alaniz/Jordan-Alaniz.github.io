@@ -14,8 +14,8 @@ permalink: /recruit/
       <div class="stat-card-lbl">Weighted · All Honors/AP · 3× President's List</div>
     </div>
     <div class="stat-card">
-      <div class="stat-card-val">1310 <span class="stat-card-unit">SAT</span></div>
-      <div class="stat-card-lbl">680 Reading · 630 Math · ACT pending</div>
+      <div class="stat-card-val">32 · 1310 <span class="stat-card-unit">ACT / SAT</span></div>
+      <div class="stat-card-lbl">29 Math · 34 English · 34 Reading | 680 Reading · 630 Math</div>
     </div>
     <div class="stat-card">
       <div class="stat-card-val">2027 <span class="stat-card-unit">Grad</span></div>
@@ -92,8 +92,8 @@ permalink: /recruit/
   <span class="section-label">Coach's words</span>
   <div class="recruit-quote">
     <p>"Constantly putting in extra work — not only PRing but studying how to get better. When he's not competing, he's on the track engaged with every race."</p>
-    <cite>— Coach Erin Smith · ASCTE Track &amp; Cross Country<br>
-    <span style="font-weight:400;color:var(--tx2);">2nd ever recipient of the ASCTE Athlete of the Meet award</span></cite>
+    <cite>— Coach Erin Smith · ASCTE Track &amp; Cross Country coach<br>
+    <span style="font-weight:400;color:var(--tx2);">Jordan was the 2nd ever recipient of the ASCTE Athlete of the Meet award</span></cite>
   </div>
 
   <span class="section-label">Background</span>
@@ -104,7 +104,7 @@ permalink: /recruit/
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
       <div class="info-cell-title">Intended Major</div>
-      <div class="info-cell-sub">Engineering (undecided specialty) · strong CS and math foundation</div>
+      <div class="info-cell-sub">Engineering/Nursing/EMS (undecided specialty) · strong CS, Medical, and English foundation</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
       <div class="info-cell-title">3× President's List · Cyber Award</div>
