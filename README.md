@@ -145,24 +145,32 @@ The training log on the Athletics page is automatically updated daily from Garmi
 
 Because Garmin uses MFA-style OAuth, you need to generate a token once on your local machine and store it as a GitHub secret. The workflow uses this token instead of your password.
 
-**Step 1 — Generate the token locally:**
+**Step 1 — Install local dependencies (one-time):**
 
 ```bash
-pip install garth
+pip install -r requirements-local.txt
+playwright install chromium
+```
+
+**Step 2 — Generate the token:**
+
+```bash
 python scripts/export_garmin_token.py
 ```
 
-Enter your Garmin email and password when prompted. The script will print a long base64 string.
+Enter your Garmin email and password when prompted. The script opens a headless Chromium browser to submit your credentials (bypassing Garmin's API rate limits), captures the OAuth tokens from the browser's network traffic, and prints a long base64 string.
 
-**Step 2 — Add it as a GitHub secret:**
+**Step 3 — Add it as a GitHub secret:**
 
 1. Go to your repo on GitHub → **Settings** → **Secrets and variables** → **Actions**
 2. Click **New repository secret**
 3. Name: `GARMIN_TOKENSTORE`
-4. Value: paste the base64 string from Step 1
+4. Value: paste the base64 string from Step 2
 5. Click **Add secret**
 
 After this, the workflow will use the token automatically. You no longer need `GARMIN_EMAIL` or `GARMIN_PASSWORD` secrets (though the workflow supports them as a fallback if `GARMIN_TOKENSTORE` is not set).
+
+> **If playwright doesn't work:** The script header contains a manual fallback — you can extract the tokens directly from your browser's DevTools Network tab and encode them yourself.
 
 ### Triggering a manual sync
 
