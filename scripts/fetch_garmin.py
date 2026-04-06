@@ -270,6 +270,9 @@ def build_stats(activities: list[dict]) -> dict:
         if t in breakdown:
             breakdown[t] += 1
 
+    # Race miles (tracked separately so they can be shown explicitly)
+    race_miles = round(sum(a["distance_mi"] for _, a in season_acts if a.get("type") == "race"), 1)
+
     return {
         "season_miles":       season_miles_total,
         "season_weeks":       season_weeks,
@@ -279,6 +282,7 @@ def build_stats(activities: list[dict]) -> dict:
         "workouts_this_week": workouts_week,
         "workouts_total":     len(season_acts),
         "type_breakdown":     breakdown,
+        "race_miles":         race_miles,
     }
 
 # ── Main ──────────────────────────────────────────────────────────────────────
