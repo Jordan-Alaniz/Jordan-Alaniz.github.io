@@ -13,11 +13,13 @@ Usage (CI):
   python scripts/fetch_garmin.py
 """
 
+import io
 import json
 import math
 import os
 import sys
 import base64
+import tarfile
 import tempfile
 from datetime import datetime, timezone
 
@@ -74,11 +76,28 @@ def get_client() -> garminconnect.Garmin:
     password  = os.environ.get("GARMIN_PASSWORD", "")
 
     if token_b64:
-        token_dir = tempfile.mkdtemp(prefix="garth_")
+        token_dir   = tempfile.mkdtemp(prefix="garth_")
         token_bytes = base64.b64decode(token_b64)
-        oauth_path = os.path.join(token_dir, "oauth2_token.json")
-        with open(oauth_path, "wb") as f:
-            f.write(token_bytes)
+
+        # Detect format: gzip magic bytes → tarball (new format containing both
+        # oauth1_token.json and oauth2_token.json); otherwise assume legacy
+        # format (raw oauth2_token.json content base64-encoded).
+        if token_bytes[:2] == b"\x1f\x8b":
+            # New format: unpack the entire garth token directory.
+            # Validate member paths to prevent path traversal.
+            with tarfile.open(fileobj=io.BytesIO(token_bytes), mode="r:gz") as tar:
+                for member in tar.getmembers():
+                    member_path = os.path.realpath(os.path.join(token_dir, member.name))
+                    if not member_path.startswith(os.path.realpath(token_dir) + os.sep):
+                        print(f"ERROR: Unsafe path in token archive: {member.name}")
+                        sys.exit(1)
+                tar.extractall(path=token_dir)
+        else:
+            # Legacy format: single oauth2_token.json
+            oauth_path = os.path.join(token_dir, "oauth2_token.json")
+            with open(oauth_path, "wb") as f:
+                f.write(token_bytes)
+
         client = garminconnect.Garmin()
         client.garth.load(token_dir)
         return client

@@ -22,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install garminconnect
+        run: pip install -r requirements.txt
 
       - name: Fetch Garmin data
         env:
