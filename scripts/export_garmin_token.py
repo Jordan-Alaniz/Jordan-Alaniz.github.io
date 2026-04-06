@@ -108,7 +108,9 @@ def capture_tokens_via_browser() -> tuple[dict | None, dict | None]:
         def on_response(response):
             nonlocal oauth1_data, oauth2_data
             try:
-                if response.status != 200:
+                # Accept any successful (2xx) response, not just HTTP 200.
+                # Garmin token endpoints may return 201 or other 2xx codes.
+                if response.status >= 400:
                     return
                 url = response.url
                 if "preauthorized" in url:
@@ -121,8 +123,8 @@ def capture_tokens_via_browser() -> tuple[dict | None, dict | None]:
                     if "access_token" in body:
                         oauth2_data = body
                         print("  ✓ Captured OAuth2 token")
-            except Exception:
-                pass
+            except Exception as exc:
+                print(f"  [debug] Error processing response from {response.url}: {exc}")
 
         page.on("response", on_response)
 
