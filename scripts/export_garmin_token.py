@@ -6,7 +6,7 @@ GARMIN_TOKENSTORE.  It stores BOTH the oauth1 and oauth2 token files that
 garth needs to refresh expired access tokens automatically in CI.
 
 Usage:
-  pip install garth
+  pip install garminconnect
   python scripts/export_garmin_token.py
 """
 
@@ -17,23 +17,41 @@ import os
 import sys
 import tarfile
 import tempfile
+import time
 
 try:
-    import garth
+    import garminconnect
 except ImportError:
-    print("Run first:  pip install garth")
+    print("Run first:  pip install garminconnect")
     sys.exit(1)
 
 EMAIL    = input("Garmin email: ").strip()
 PASSWORD = getpass.getpass("Garmin password: ")
 
 print("\nLogging in to Garmin Connect...")
-client = garth.Client()
-client.login(EMAIL, PASSWORD)
+client = garminconnect.Garmin(EMAIL, PASSWORD)
+
+MAX_RETRIES = 3
+for attempt in range(1, MAX_RETRIES + 1):
+    try:
+        client.login()
+        break
+    except Exception as exc:
+        status = None
+        if hasattr(exc, "response") and hasattr(exc.response, "status_code"):
+            status = exc.response.status_code
+
+        if status == 429 and attempt < MAX_RETRIES:
+            wait = 60 * attempt
+            print(f"Rate limited (429). Waiting {wait}s before retry {attempt+1}/{MAX_RETRIES}...")
+            time.sleep(wait)
+        else:
+            print(f"ERROR: Login failed: {exc}")
+            sys.exit(1)
 
 # Save ALL token files garth writes (oauth1_token.json + oauth2_token.json)
 token_dir = tempfile.mkdtemp(prefix="garth_export_")
-client.dump(token_dir)
+client.garth.dump(token_dir)
 
 files = os.listdir(token_dir)
 if not files:
