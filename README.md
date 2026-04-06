@@ -122,5 +122,48 @@ assets/
     projects/    <- Project teaser images
 _data/
   navigation.yml <- Site navigation links
+  training_log.json <- Auto-updated by Garmin sync workflow
 _config.yml      <- Site-wide settings
+scripts/
+  fetch_garmin.py         <- Pulls activities from Garmin Connect (run by CI)
+  export_garmin_token.py  <- One-time local script to generate GARMIN_TOKENSTORE secret
 ```
+
+---
+
+## Garmin Training Log Sync
+
+The training log on the Athletics page is automatically updated daily from Garmin Connect.
+
+### How it works
+
+1. A GitHub Actions workflow (`.github/workflows/sync-garmin.yml`) runs every day at 1:00 AM CT.
+2. It runs `scripts/fetch_garmin.py`, which pulls recent running activities from Garmin Connect and writes `_data/training_log.json`.
+3. If the file changed, the workflow commits and pushes it, which triggers a new GitHub Pages build.
+
+### One-time setup: create the `GARMIN_TOKENSTORE` secret
+
+Because Garmin uses MFA-style OAuth, you need to generate a token once on your local machine and store it as a GitHub secret. The workflow uses this token instead of your password.
+
+**Step 1 — Generate the token locally:**
+
+```bash
+pip install garth
+python scripts/export_garmin_token.py
+```
+
+Enter your Garmin email and password when prompted. The script will print a long base64 string.
+
+**Step 2 — Add it as a GitHub secret:**
+
+1. Go to your repo on GitHub → **Settings** → **Secrets and variables** → **Actions**
+2. Click **New repository secret**
+3. Name: `GARMIN_TOKENSTORE`
+4. Value: paste the base64 string from Step 1
+5. Click **Add secret**
+
+After this, the workflow will use the token automatically. You no longer need `GARMIN_EMAIL` or `GARMIN_PASSWORD` secrets (though the workflow supports them as a fallback if `GARMIN_TOKENSTORE` is not set).
+
+### Triggering a manual sync
+
+Go to **Actions** → **Sync Garmin Training Log** → **Run workflow**.
