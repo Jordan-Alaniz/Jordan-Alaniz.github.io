@@ -18,6 +18,33 @@ Usage:
 
   A browser window will open — sign in as you normally would, then come back
   to this terminal.  The token string will be printed when capture is done.
+
+──────────────────────────────────────────────────────────────────────────────
+FALLBACK — Manual Token Extraction (if the browser approach still fails):
+
+  1. Open https://connect.garmin.com in your OWN browser and sign in normally.
+  2. Open DevTools (F12) → Network tab.
+  3. In the filter box type "preauthorized".
+     Right-click the matching request → Copy → Copy Response.
+     Save the text as:  oauth1_token.json
+  4. Clear the filter and type "exchange/user/2.0".
+     Right-click → Copy → Copy Response.
+     Save the text as:  oauth2_token.json
+  5. Put both files in a folder (e.g. /tmp/garmin_tokens/), then run:
+
+       python3 - <<'HEREDOC'
+       import base64, io, tarfile, os
+       d = "/tmp/garmin_tokens"
+       buf = io.BytesIO()
+       with tarfile.open(fileobj=buf, mode="w:gz") as tar:
+           for f in os.listdir(d):
+               tar.add(os.path.join(d, f), arcname=f)
+       buf.seek(0)
+       print(base64.b64encode(buf.read()).decode())
+       HEREDOC
+
+  6. Paste the printed string as the GARMIN_TOKENSTORE GitHub secret.
+──────────────────────────────────────────────────────────────────────────────
 """
 
 import base64
@@ -51,10 +78,29 @@ def capture_tokens_via_browser() -> tuple[dict | None, dict | None]:
     with sync_playwright() as pw:
         browser = pw.chromium.launch(
             headless=False,
-            args=["--window-size=1280,800"],
+            args=[
+                "--window-size=1280,800",
+                # Tell Chromium not to expose automation-specific JS APIs that
+                # Garmin's SSO uses to detect bots and show "unexpected error".
+                "--disable-blink-features=AutomationControlled",
+            ],
         )
-        context = browser.new_context(viewport={"width": 1280, "height": 800})
+        context = browser.new_context(
+            viewport={"width": 1280, "height": 800},
+            # Mimic a real Chrome browser so Garmin's fingerprinting doesn't
+            # flag the Playwright-built Chromium binary as a bot.
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+        )
         page = context.new_page()
+        # Remove the navigator.webdriver flag that Playwright injects; this is
+        # the primary signal Garmin checks to identify automated browsers.
+        page.add_init_script(
+            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
+        )
 
         oauth1_data: dict | None = None
         oauth2_data: dict | None = None
