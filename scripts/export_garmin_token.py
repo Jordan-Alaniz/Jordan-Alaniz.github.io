@@ -112,18 +112,33 @@ def login_via_browser(email: str, password: str) -> tuple[dict | None, dict | No
                 timeout=30_000,
             )
 
+            # Garmin's login form lives inside an SSO iframe on the signin page.
+            # Try the iframe first; fall back to the top-level page in case
+            # Garmin ever serves the form directly.
             print("  Waiting for login form…")
-            page.wait_for_selector(
-                "#username, input[name='username'], input[type='email']",
-                timeout=20_000,
+            username_selector = "#username, input[name='username'], input[type='email']"
+            password_selector = "#password, input[name='password']"
+            submit_selector   = "#login-btn-signin, button[type='submit']"
+
+            frame_loc = page.frame_locator(
+                'iframe[id*="gauth-widget"], iframe[src*="sso.garmin.com"]'
             )
-
-            print("  Filling credentials…")
-            page.fill("#username", email)
-            page.fill("#password, input[name='password']", password)
-
-            print("  Submitting…")
-            page.click("#login-btn-signin, button[type='submit']")
+            try:
+                frame_loc.locator(username_selector).wait_for(timeout=15_000)
+                # Form is inside the iframe
+                print("  Found login form in SSO iframe")
+                frame_loc.locator(username_selector).fill(email)
+                frame_loc.locator(password_selector).fill(password)
+                print("  Submitting…")
+                frame_loc.locator(submit_selector).click()
+            except Exception:
+                # No iframe found — try the top-level page
+                print("  Iframe not found; trying top-level page…")
+                page.wait_for_selector(username_selector, timeout=15_000)
+                page.fill(username_selector, email)
+                page.fill(password_selector, password)
+                print("  Submitting…")
+                page.click(submit_selector)
 
             # Wait up to 30 s for the token exchange to complete
             print("  Waiting for token exchange…")
