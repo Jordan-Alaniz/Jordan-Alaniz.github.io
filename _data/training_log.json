@@ -15,7 +15,8 @@
       "tempo": 1,
       "interval": 1,
       "race": 0
-    }
+    },
+    "race_miles": 0.0
   },
   "activities": [
     {

@@ -2,10 +2,10 @@
 """
 export_garmin_token.py — run this ONCE locally to generate a Garmin OAuth token.
 
-Uses a headless Chromium browser (via playwright) to submit your credentials to
-Garmin's SSO page, bypassing the aggressive rate-limiting Garmin applies to
-programmatic HTTP logins.  The browser's network traffic is intercepted to
-capture the OAuth1 + OAuth2 tokens that Garmin Connect exchanges after sign-in.
+Opens a VISIBLE Chromium browser window and navigates to Garmin Connect.
+Log in normally using the browser window (email, password, MFA if prompted).
+The script watches the network traffic in the background and automatically
+captures the OAuth tokens once sign-in completes — no DevTools required.
 The output is a base64-encoded .tar.gz you paste into GitHub Secrets as
 GARMIN_TOKENSTORE.
 
@@ -16,36 +16,11 @@ SETUP (one-time, local machine only — not needed in CI):
 Usage:
   python scripts/export_garmin_token.py
 
-──────────────────────────────────────────────────────────────────────────────
-FALLBACK — Manual Token Extraction (no playwright required):
-
-  1. Open https://connect.garmin.com in your browser and sign in normally.
-  2. Open DevTools (F12) → Network tab.
-  3. In the filter box type "preauthorized".
-     Right-click the matching request → Copy → Copy Response.
-     Save the text as:  oauth1_token.json
-  4. Clear the filter and type "exchange/user/2.0".
-     Right-click → Copy → Copy Response.
-     Save the text as:  oauth2_token.json
-  5. Put both files in a folder (e.g. /tmp/garmin_tokens/), then run:
-
-       python3 - <<'HEREDOC'
-       import base64, io, tarfile, os
-       d = "/tmp/garmin_tokens"
-       buf = io.BytesIO()
-       with tarfile.open(fileobj=buf, mode="w:gz") as tar:
-           for f in os.listdir(d):
-               tar.add(os.path.join(d, f), arcname=f)
-       buf.seek(0)
-       print(base64.b64encode(buf.read()).decode())
-       HEREDOC
-
-  6. Paste the printed string as the GARMIN_TOKENSTORE GitHub secret.
-──────────────────────────────────────────────────────────────────────────────
+  A browser window will open — sign in as you normally would, then come back
+  to this terminal.  The token string will be printed when capture is done.
 """
 
 import base64
-import getpass
 import io
 import json
 import os
@@ -56,28 +31,29 @@ import time
 
 # ── Dependency check ──────────────────────────────────────────────────────────
 try:
-    from playwright.sync_api import sync_playwright, TimeoutError as PWTimeoutError
+    from playwright.sync_api import sync_playwright
 except ImportError:
     print("playwright not found.  Run:")
     print("  pip install playwright && playwright install chromium")
     sys.exit(1)
 
-# ── Interactive prompts ───────────────────────────────────────────────────────
-EMAIL    = input("Garmin email: ").strip()
-PASSWORD = getpass.getpass("Garmin password: ")
-
 # ── Browser login — intercepts OAuth token responses ─────────────────────────
-def login_via_browser(email: str, password: str) -> tuple[dict | None, dict | None]:
+def capture_tokens_via_browser() -> tuple[dict | None, dict | None]:
     """
-    Opens a headless Chromium browser, navigates to Garmin Connect, fills in
-    credentials, and returns (oauth1_token_dict, oauth2_token_dict) captured
-    from the network responses.  Either value may be None if not intercepted.
+    Opens a visible Chromium browser, navigates to Garmin Connect, and waits
+    for the user to log in manually.  Network responses are intercepted to
+    capture (oauth1_token_dict, oauth2_token_dict).  Either may be None if
+    not observed before the window is closed.
     """
-    print("\nLaunching headless browser…")
+    print("\nOpening browser — please sign in to Garmin Connect in the window that appears.")
+    print("Come back here after you are logged in.\n")
 
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True)
-        context = browser.new_context(viewport={"width": 1280, "height": 720})
+        browser = pw.chromium.launch(
+            headless=False,
+            args=["--window-size=1280,800"],
+        )
+        context = browser.new_context(viewport={"width": 1280, "height": 800})
         page = context.new_page()
 
         oauth1_data: dict | None = None
@@ -104,41 +80,26 @@ def login_via_browser(email: str, password: str) -> tuple[dict | None, dict | No
 
         page.on("response", on_response)
 
-        try:
-            print("  Navigating to Garmin Connect…")
-            page.goto(
-                "https://connect.garmin.com/signin/",
-                wait_until="domcontentloaded",
-                timeout=30_000,
-            )
+        page.goto(
+            "https://connect.garmin.com/signin/",
+            wait_until="domcontentloaded",
+            timeout=30_000,
+        )
 
-            print("  Waiting for login form…")
-            page.wait_for_selector(
-                "#username, input[name='username'], input[type='email']",
-                timeout=20_000,
-            )
-
-            print("  Filling credentials…")
-            page.fill("#username", email)
-            page.fill("#password, input[name='password']", password)
-
-            print("  Submitting…")
-            page.click("#login-btn-signin, button[type='submit']")
-
-            # Wait up to 30 s for the token exchange to complete
-            print("  Waiting for token exchange…")
-            deadline = time.time() + 30
-            while time.time() < deadline:
-                if oauth2_data is not None:
-                    break
+        # Wait up to 3 minutes for the user to log in and the tokens to appear.
+        # Close the browser automatically once both tokens are captured.
+        print("Waiting for you to log in (up to 3 minutes)…")
+        deadline = time.time() + 180
+        while time.time() < deadline:
+            if oauth2_data is not None:
+                print("\nTokens captured — closing browser.")
+                break
+            try:
                 page.wait_for_timeout(500)
+            except Exception:
+                break  # page/browser was closed by user
 
-        except PWTimeoutError as exc:
-            print(f"  Browser timeout: {exc}")
-        except Exception as exc:
-            print(f"  Browser error: {exc}")
-        finally:
-            browser.close()
+        browser.close()
 
     return oauth1_data, oauth2_data
 
@@ -171,12 +132,12 @@ def write_token_files(token_dir: str, oauth1: dict | None, oauth2: dict) -> None
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main() -> None:
-    oauth1, oauth2 = login_via_browser(EMAIL, PASSWORD)
+    oauth1, oauth2 = capture_tokens_via_browser()
 
     if oauth2 is None:
         print("\nERROR: OAuth2 token was not captured.")
-        print("Login may have failed, or Garmin changed its authentication flow.")
-        print("Try the manual extraction fallback described at the top of this script.")
+        print("You may not have finished signing in, or the browser was closed early.")
+        print("Re-run the script and make sure you complete the full Garmin login.")
         sys.exit(1)
 
     token_dir = tempfile.mkdtemp(prefix="garth_export_")
@@ -207,7 +168,8 @@ Next steps:
   6. Re-run the GitHub Action — it will use the token instead of password login
 
 NOTE: This token encodes BOTH oauth1 and oauth2 credentials so that CI can
-refresh the access token automatically when it expires.
+refresh the access token automatically when it expires.  Tokens typically
+last 90 days; re-run this script when the CI sync starts failing again.
 """)
 
 if __name__ == "__main__":

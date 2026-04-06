@@ -63,7 +63,11 @@
       <span class="tlog-pill tlog-pill--interval">{{ s.type_breakdown.interval }} intervals</span>
       {% endif %}
       {% if s.type_breakdown.race > 0 %}
-      <span class="tlog-pill tlog-pill--race">{{ s.type_breakdown.race }} race</span>
+      {% if s.type_breakdown.race == 1 %}
+      <span class="tlog-pill tlog-pill--race">1 race · {{ s.race_miles }} mi</span>
+      {% else %}
+      <span class="tlog-pill tlog-pill--race">{{ s.type_breakdown.race }} races · {{ s.race_miles }} mi</span>
+      {% endif %}
       {% endif %}
     </div>
   </div>
