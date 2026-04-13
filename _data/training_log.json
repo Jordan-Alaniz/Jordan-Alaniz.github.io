@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-04-12",
-  "weekly_miles": 2.8,
+  "last_updated": "2026-04-13",
+  "weekly_miles": 0.0,
   "stats": {
     "season_miles": 40.0,
     "season_weeks": 7,
     "avg_weekly_miles": 5.7,
     "longest_run_mi": 4.98,
     "longest_run_date": "2026-03-31",
-    "workouts_this_week": 3,
+    "workouts_this_week": 0,
     "workouts_total": 25,
     "type_breakdown": {
       "easy": 19,
