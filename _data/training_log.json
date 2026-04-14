@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-04-13",
-  "weekly_miles": 0.0,
+  "last_updated": "2026-04-14",
+  "weekly_miles": 3.8,
   "stats": {
-    "season_miles": 40.0,
+    "season_miles": 39.1,
     "season_weeks": 7,
-    "avg_weekly_miles": 5.7,
+    "avg_weekly_miles": 5.6,
     "longest_run_mi": 4.98,
     "longest_run_date": "2026-03-31",
-    "workouts_this_week": 0,
+    "workouts_this_week": 3,
     "workouts_total": 25,
     "type_breakdown": {
       "easy": 19,
@@ -19,6 +19,128 @@
     "race_miles": 0
   },
   "activities": [
+    {
+      "id": "22518232256",
+      "date": "2026-04-13",
+      "day": "Mon",
+      "type": "easy",
+      "type_label": "Easy Run",
+      "distance_mi": 0.6,
+      "duration": "7:32",
+      "pace": "12:34",
+      "avg_hr": 145,
+      "max_hr": 154,
+      "notes": "",
+      "laps": [
+        {
+          "n": 1,
+          "dist": "0.6",
+          "time": "7:32",
+          "pace": "12:34",
+          "hr": 145
+        }
+      ]
+    },
+    {
+      "id": "22518231269",
+      "date": "2026-04-13",
+      "day": "Mon",
+      "type": "interval",
+      "type_label": "Intervals",
+      "distance_mi": 2.16,
+      "duration": "19:29",
+      "pace": "9:02",
+      "avg_hr": 172,
+      "max_hr": 202,
+      "notes": "",
+      "laps": [
+        {
+          "n": 1,
+          "dist": "0.5",
+          "time": "2:37",
+          "pace": "5:12",
+          "hr": 188
+        },
+        {
+          "n": 2,
+          "dist": "0.03",
+          "time": "2:00",
+          "pace": "65:06",
+          "hr": 163
+        },
+        {
+          "n": 3,
+          "dist": "0.5",
+          "time": "2:42",
+          "pace": "5:27",
+          "hr": 173
+        },
+        {
+          "n": 4,
+          "dist": "0.03",
+          "time": "2:00",
+          "pace": "64:00",
+          "hr": 162
+        },
+        {
+          "n": 5,
+          "dist": "0.5",
+          "time": "2:54",
+          "pace": "5:52",
+          "hr": 180
+        },
+        {
+          "n": 6,
+          "dist": "0.02",
+          "time": "2:10",
+          "pace": "86:31",
+          "hr": 159
+        },
+        {
+          "n": 7,
+          "dist": "0.5",
+          "time": "3:02",
+          "pace": "6:07",
+          "hr": 180
+        },
+        {
+          "n": 8,
+          "dist": "0.07",
+          "time": "2:01",
+          "pace": "27:52",
+          "hr": 162
+        }
+      ]
+    },
+    {
+      "id": "22515560709",
+      "date": "2026-04-13",
+      "day": "Mon",
+      "type": "easy",
+      "type_label": "Easy Run",
+      "distance_mi": 1.0,
+      "duration": "7:00",
+      "pace": "6:58",
+      "avg_hr": 151,
+      "max_hr": 177,
+      "notes": "",
+      "laps": [
+        {
+          "n": 1,
+          "dist": "1.0",
+          "time": "6:58",
+          "pace": "6:58",
+          "hr": 151
+        },
+        {
+          "n": 2,
+          "dist": "0.0",
+          "time": "0:01",
+          "pace": "4:12",
+          "hr": 177
+        }
+      ]
+    },
     {
       "id": "22459073690",
       "date": "2026-04-08",
@@ -1137,205 +1259,6 @@
           "time": "4:13",
           "pace": "8:27",
           "hr": 160
-        }
-      ]
-    },
-    {
-      "id": "21986663755",
-      "date": "2026-02-25",
-      "day": "Wed",
-      "type": "easy",
-      "type_label": "Easy Run",
-      "distance_mi": 1.0,
-      "duration": "7:10",
-      "pace": "7:09",
-      "avg_hr": 134,
-      "max_hr": 145,
-      "notes": "",
-      "laps": [
-        {
-          "n": 1,
-          "dist": "1.0",
-          "time": "7:10",
-          "pace": "7:10",
-          "hr": 134
-        },
-        {
-          "n": 2,
-          "dist": "0.0",
-          "time": "0:00",
-          "pace": "3:11",
-          "hr": 144
-        }
-      ]
-    },
-    {
-      "id": "21975579957",
-      "date": "2026-02-24",
-      "day": "Tue",
-      "type": "easy",
-      "type_label": "Easy Run",
-      "distance_mi": 0.67,
-      "duration": "5:19",
-      "pace": "7:56",
-      "avg_hr": 134,
-      "max_hr": 142,
-      "notes": "",
-      "laps": [
-        {
-          "n": 1,
-          "dist": "0.67",
-          "time": "5:19",
-          "pace": "7:56",
-          "hr": 134
-        }
-      ]
-    },
-    {
-      "id": "21975279603",
-      "date": "2026-02-24",
-      "day": "Tue",
-      "type": "interval",
-      "type_label": "Intervals",
-      "distance_mi": 3.0,
-      "duration": "34:35",
-      "pace": "11:32",
-      "avg_hr": 162,
-      "max_hr": 204,
-      "notes": "",
-      "laps": [
-        {
-          "n": 1,
-          "dist": "0.37",
-          "time": "1:54",
-          "pace": "5:06",
-          "hr": 170
-        },
-        {
-          "n": 2,
-          "dist": "0.04",
-          "time": "2:16",
-          "pace": "60:49",
-          "hr": 164
-        },
-        {
-          "n": 3,
-          "dist": "0.37",
-          "time": "2:00",
-          "pace": "5:25",
-          "hr": 180
-        },
-        {
-          "n": 4,
-          "dist": "0.02",
-          "time": "1:58",
-          "pace": "5:25",
-          "hr": 166
-        },
-        {
-          "n": 5,
-          "dist": "0.38",
-          "time": "2:06",
-          "pace": "5:35",
-          "hr": 176
-        },
-        {
-          "n": 6,
-          "dist": "0.03",
-          "time": "1:58",
-          "pace": "65:15",
-          "hr": 170
-        },
-        {
-          "n": 7,
-          "dist": "0.37",
-          "time": "2:12",
-          "pace": "5:57",
-          "hr": 176
-        },
-        {
-          "n": 8,
-          "dist": "0.02",
-          "time": "1:55",
-          "pace": "5:57",
-          "hr": 169
-        },
-        {
-          "n": 9,
-          "dist": "0.25",
-          "time": "1:21",
-          "pace": "5:27",
-          "hr": 169
-        },
-        {
-          "n": 10,
-          "dist": "0.02",
-          "time": "1:58",
-          "pace": "87:22",
-          "hr": 162
-        },
-        {
-          "n": 11,
-          "dist": "0.25",
-          "time": "1:21",
-          "pace": "5:31",
-          "hr": 170
-        },
-        {
-          "n": 12,
-          "dist": "0.02",
-          "time": "1:56",
-          "pace": "87:39",
-          "hr": 167
-        },
-        {
-          "n": 13,
-          "dist": "0.25",
-          "time": "1:20",
-          "pace": "5:22",
-          "hr": 169
-        },
-        {
-          "n": 14,
-          "dist": "0.02",
-          "time": "2:02",
-          "pace": "82:16",
-          "hr": 157
-        },
-        {
-          "n": 15,
-          "dist": "0.25",
-          "time": "1:16",
-          "pace": "5:07",
-          "hr": 158
-        },
-        {
-          "n": 16,
-          "dist": "0.03",
-          "time": "3:12",
-          "pace": "107:17",
-          "hr": 139
-        },
-        {
-          "n": 17,
-          "dist": "0.12",
-          "time": "0:30",
-          "pace": "4:01",
-          "hr": 134
-        },
-        {
-          "n": 18,
-          "dist": "0.04",
-          "time": "2:39",
-          "pace": "71:31",
-          "hr": 133
-        },
-        {
-          "n": 19,
-          "dist": "0.13",
-          "time": "0:31",
-          "pace": "4:00",
-          "hr": 135
         }
       ]
     }
