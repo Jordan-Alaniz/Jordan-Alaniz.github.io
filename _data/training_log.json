@@ -1,24 +1,89 @@
 {
-  "last_updated": "2026-04-14",
-  "weekly_miles": 3.8,
+  "last_updated": "2026-04-15",
+  "weekly_miles": 7.3,
   "stats": {
-    "season_miles": 39.1,
+    "season_miles": 40.6,
     "season_weeks": 7,
-    "avg_weekly_miles": 5.6,
+    "avg_weekly_miles": 5.8,
     "longest_run_mi": 4.98,
     "longest_run_date": "2026-03-31",
-    "workouts_this_week": 3,
+    "workouts_this_week": 5,
     "workouts_total": 25,
     "type_breakdown": {
-      "easy": 19,
+      "easy": 18,
       "long": 0,
       "tempo": 0,
-      "interval": 6,
+      "interval": 7,
       "race": 0
     },
     "race_miles": 0
   },
   "activities": [
+    {
+      "id": "22528227405",
+      "date": "2026-04-14",
+      "day": "Tue",
+      "type": "interval",
+      "type_label": "Intervals",
+      "distance_mi": 2.49,
+      "duration": "20:51",
+      "pace": "8:22",
+      "avg_hr": 154,
+      "max_hr": 165,
+      "notes": "",
+      "laps": [
+        {
+          "n": 1,
+          "dist": "0.99",
+          "time": "8:13",
+          "pace": "8:16",
+          "hr": 150
+        },
+        {
+          "n": 2,
+          "dist": "0.99",
+          "time": "8:19",
+          "pace": "8:22",
+          "hr": 156
+        },
+        {
+          "n": 3,
+          "dist": "0.5",
+          "time": "4:17",
+          "pace": "8:33",
+          "hr": 157
+        }
+      ]
+    },
+    {
+      "id": "22528220807",
+      "date": "2026-04-14",
+      "day": "Tue",
+      "type": "easy",
+      "type_label": "Easy Run",
+      "distance_mi": 1.01,
+      "duration": "8:18",
+      "pace": "8:15",
+      "avg_hr": 142,
+      "max_hr": 158,
+      "notes": "",
+      "laps": [
+        {
+          "n": 1,
+          "dist": "1.0",
+          "time": "8:16",
+          "pace": "8:16",
+          "hr": 142
+        },
+        {
+          "n": 2,
+          "dist": "0.01",
+          "time": "0:01",
+          "pace": "4:33",
+          "hr": 158
+        }
+      ]
+    },
     {
       "id": "22518232256",
       "date": "2026-04-13",
@@ -1208,57 +1273,6 @@
           "time": "1:53",
           "pace": "77:04",
           "hr": 158
-        }
-      ]
-    },
-    {
-      "id": "22052379232",
-      "date": "2026-03-03",
-      "day": "Tue",
-      "type": "easy",
-      "type_label": "Easy Run",
-      "distance_mi": 1.5,
-      "duration": "11:12",
-      "pace": "7:28",
-      "avg_hr": 159,
-      "max_hr": 174,
-      "notes": "",
-      "laps": [
-        {
-          "n": 1,
-          "dist": "1.0",
-          "time": "7:26",
-          "pace": "7:26",
-          "hr": 153
-        },
-        {
-          "n": 2,
-          "dist": "0.5",
-          "time": "3:46",
-          "pace": "7:32",
-          "hr": 170
-        }
-      ]
-    },
-    {
-      "id": "21986665548",
-      "date": "2026-02-25",
-      "day": "Wed",
-      "type": "easy",
-      "type_label": "Easy Run",
-      "distance_mi": 0.5,
-      "duration": "4:13",
-      "pace": "8:27",
-      "avg_hr": 160,
-      "max_hr": 173,
-      "notes": "",
-      "laps": [
-        {
-          "n": 1,
-          "dist": "0.5",
-          "time": "4:13",
-          "pace": "8:27",
-          "hr": 160
         }
       ]
     }
