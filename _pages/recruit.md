@@ -41,8 +41,8 @@ permalink: /recruit/
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">01</span>
       <span class="ruled-name">3200m</span>
-      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">11:40.53</span>
-      <span class="ruled-meta">↓ 6.7% this season</span>
+      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">11:22.26</span>
+      <span class="ruled-meta">↓ 9.0% this season</span>
       <span class="ruled-badge">19th · 3A</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">

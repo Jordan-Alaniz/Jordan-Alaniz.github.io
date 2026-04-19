@@ -24,9 +24,9 @@ permalink: /athletics/
   <div id="stats" class="section-anchor"></div>
   <div class="stat-cards">
     <div class="stat-card">
-      <div class="stat-card-val">11:40 <span class="stat-card-unit">3200m</span></div>
+      <div class="stat-card-val">11:22 <span class="stat-card-unit">3200m</span></div>
       <div class="stat-card-lbl">19th in Class 3A · Outdoor</div>
-      <div class="stat-card-delta">↓ 6.7% this season</div>
+      <div class="stat-card-delta">↓ 9.0% this season</div>
     </div>
     <div class="stat-card">
       <div class="stat-card-val">19:34 <span class="stat-card-unit">5K XC</span></div>
@@ -55,10 +55,10 @@ permalink: /athletics/
       <span class="sort-col" data-col="2" data-type="text" aria-sort="none">Rank <span class="sort-icon">⇅</span></span>
     </div>
     <div class="pr-tbody">
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m" data-time="11:40.53" data-rank="19th · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m" data-time="11:22.26" data-rank="19th · 3A">
         <span class="ruled-num">01</span>
         <span class="ruled-name">3200m</span>
-        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:40.53</span>
+        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:22.26</span>
         <span class="ruled-badge">19th · 3A</span>
       </div>
       <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m" data-time="5:11.67" data-rank="24th · 3A">
