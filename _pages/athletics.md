@@ -4,7 +4,7 @@ title: Athletics
 bg: athletics
 chapter: "Athletics"
 page_bg: athletics
-subtitle: "Varsity distance runner · Track & Field and Cross Country · consistent 7–10% improvement every season."
+subtitle: "Varsity distance runner · Track & Field and Cross Country · consistent 6–10% improvement every season."
 permalink: /athletics/
 ---
 
@@ -23,9 +23,9 @@ permalink: /athletics/
   <div id="stats" class="section-anchor"></div>
   <div class="stat-cards">
     <div class="stat-card">
-      <div class="stat-card-val">11:22 <span class="stat-card-unit">3200m</span></div>
-      <div class="stat-card-lbl">19th in Class 3A · Outdoor</div>
-      <div class="stat-card-delta">↓ 9.0% this season</div>
+      <div class="stat-card-val">11:40 <span class="stat-card-unit">3200m</span></div>
+      <div class="stat-card-lbl">21st in Class 3A · Outdoor</div>
+      <div class="stat-card-delta">↓ 6.6% this season</div>
     </div>
     <div class="stat-card">
       <div class="stat-card-val">19:34 <span class="stat-card-unit">5K XC</span></div>
@@ -34,8 +34,8 @@ permalink: /athletics/
     </div>
     <div class="stat-card">
       <div class="stat-card-val">5:11 <span class="stat-card-unit">1600m</span></div>
-      <div class="stat-card-lbl">24th in Class 3A · Outdoor</div>
-      <div class="stat-card-delta">↓ 8.5% this season</div>
+      <div class="stat-card-lbl">27th in Class 3A · Outdoor</div>
+      <div class="stat-card-delta">↓ 8.3% this season</div>
     </div>
   </div>
 
@@ -54,23 +54,23 @@ permalink: /athletics/
       <span class="sort-col" data-col="2" data-type="text" aria-sort="none">Rank <span class="sort-icon">⇅</span></span>
     </div>
     <div class="pr-tbody">
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m" data-time="11:22.26" data-rank="19th · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m" data-time="11:40.53" data-rank="21st · 3A">
         <span class="ruled-num">01</span>
         <span class="ruled-name">3200m</span>
-        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:22.26</span>
-        <span class="ruled-badge">19th · 3A</span>
+        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:40.53</span>
+        <span class="ruled-badge">21st · 3A</span>
       </div>
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m" data-time="5:11.67" data-rank="24th · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m" data-time="5:11.67" data-rank="27th · 3A">
         <span class="ruled-num">02</span>
         <span class="ruled-name">1600m</span>
         <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">5:11.67</span>
-        <span class="ruled-badge">24th · 3A</span>
+        <span class="ruled-badge">27th · 3A</span>
       </div>
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="800m" data-time="2:25.16" data-rank="30th · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="800m" data-time="2:25.16" data-rank="47th · 3A">
         <span class="ruled-num">03</span>
         <span class="ruled-name">800m</span>
         <span class="ruled-meta">2:25.16</span>
-        <span class="ruled-badge">30th · 3A</span>
+        <span class="ruled-badge">47th · 3A</span>
       </div>
       <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="5K Cross Country" data-time="19:34.42" data-rank="State qualifier">
         <span class="ruled-num">04</span>
@@ -98,7 +98,7 @@ permalink: /athletics/
       <div class="info-cell-sub">2025 season</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
-      <div class="info-cell-title">4th in Section 4 — 3200m</div>
+      <div class="info-cell-title">10th in Section 4 — 3200m</div>
       <div class="info-cell-sub">2026 Outdoor</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>

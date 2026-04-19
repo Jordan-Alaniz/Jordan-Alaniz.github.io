@@ -41,16 +41,16 @@ permalink: /recruit/
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">01</span>
       <span class="ruled-name">3200m</span>
-      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">11:22.26</span>
-      <span class="ruled-meta">↓ 9.0% this season</span>
-      <span class="ruled-badge">19th · 3A</span>
+      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">11:40.53</span>
+      <span class="ruled-meta">↓ 6.6% this season</span>
+      <span class="ruled-badge">21st · 3A</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">02</span>
       <span class="ruled-name">1600m</span>
       <span class="ruled-meta" style="color:var(--acc);font-weight:700;">5:11.67</span>
-      <span class="ruled-meta">↓ 8.5% this season</span>
-      <span class="ruled-badge">24th · 3A</span>
+      <span class="ruled-meta">↓ 8.3% this season</span>
+      <span class="ruled-badge">27th · 3A</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">03</span>
@@ -63,13 +63,13 @@ permalink: /recruit/
       <span class="ruled-num">04</span>
       <span class="ruled-name">800m</span>
       <span class="ruled-meta">2:25.16</span>
-      <span class="ruled-meta">↓ season PR</span>
-      <span class="ruled-badge">30th · 3A</span>
+      <span class="ruled-meta">↓ 5.3% overall</span>
+      <span class="ruled-badge">47th · 3A</span>
     </div>
   </div>
 
   <p style="margin-bottom:2.5rem;font-size:.875rem;color:var(--tx2);">
-    Consistent 7–10% improvement every season since freshman year — only 3 seasons of competitive running.
+    Consistent 6–10% improvement every season since freshman year — only 3 seasons of competitive running.
     <a href="{{ '/athletics/' | relative_url }}" style="color:var(--acc);font-weight:600;">View full season-by-season charts →</a>
   </p>
 
