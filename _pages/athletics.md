@@ -15,7 +15,6 @@ permalink: /athletics/
     <a href="#progression" class="subnav-link">Progression</a>
     <a href="#records"     class="subnav-link">PRs</a>
     <a href="#awards"      class="subnav-link">Awards</a>
-    <a href="#log"         class="subnav-link">Training Log</a>
     <a href="#video"       class="subnav-link">Video</a>
   </div>
 </nav>
@@ -107,10 +106,6 @@ permalink: /athletics/
       <div class="info-cell-sub"><a href="{{ site.milesplit_url }}" target="_blank" rel="noopener">View MileSplit profile →</a></div>
     </div></div>
   </div>
-
-  <div id="log" class="section-anchor"></div>
-  <span class="section-label" style="margin-top:2.5rem;display:block;">Training log</span>
-  {% include training-log.html %}
 
   <div id="video" class="section-anchor"></div>
   <span class="section-label" style="margin-top:2.5rem;display:block;">Race footage</span>

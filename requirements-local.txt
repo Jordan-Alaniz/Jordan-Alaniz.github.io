@@ -1,6 +1,0 @@
-# Dependencies for running scripts locally (not needed in CI).
-# Install with:
-#   pip install -r requirements-local.txt
-#   playwright install chromium
-playwright
-garminconnect
