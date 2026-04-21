@@ -24,7 +24,7 @@ permalink: /athletics/
   <div class="stat-cards">
     <div class="stat-card">
       <div class="stat-card-val">11:22 <span class="stat-card-unit">3200m</span></div>
-      <div class="stat-card-lbl">19th in Class 3A · Outdoor</div>
+      <div class="stat-card-lbl">8th in section · 16th in Class 3A · Outdoor</div>
       <div class="stat-card-delta">↓ 9.0% this season</div>
     </div>
     <div class="stat-card">
@@ -34,7 +34,7 @@ permalink: /athletics/
     </div>
     <div class="stat-card">
       <div class="stat-card-val">5:11 <span class="stat-card-unit">1600m</span></div>
-      <div class="stat-card-lbl">24th in Class 3A · Outdoor</div>
+      <div class="stat-card-lbl">11th in section · 27th in Class 3A · Outdoor</div>
       <div class="stat-card-delta">↓ 8.5% this season</div>
     </div>
   </div>
@@ -54,17 +54,17 @@ permalink: /athletics/
       <span class="sort-col" data-col="2" data-type="text" aria-sort="none">Rank <span class="sort-icon">⇅</span></span>
     </div>
     <div class="pr-tbody">
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m" data-time="11:22.26" data-rank="19th · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m" data-time="11:22.26" data-rank="8th in section · 16th in 3A">
         <span class="ruled-num">01</span>
         <span class="ruled-name">3200m</span>
         <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:22.26</span>
-        <span class="ruled-badge">19th · 3A</span>
+        <span class="ruled-badge">8th in section · 16th in 3A</span>
       </div>
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m" data-time="5:11.67" data-rank="24th · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m" data-time="5:11.67" data-rank="11th in section · 27th in 3A">
         <span class="ruled-num">02</span>
         <span class="ruled-name">1600m</span>
         <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">5:11.67</span>
-        <span class="ruled-badge">24th · 3A</span>
+        <span class="ruled-badge">11th in section · 27th in 3A</span>
       </div>
       <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="800m" data-time="2:25.16" data-rank="30th · 3A">
         <span class="ruled-num">03</span>
