@@ -43,14 +43,14 @@ permalink: /recruit/
       <span class="ruled-name">3200m</span>
       <span class="ruled-meta" style="color:var(--acc);font-weight:700;">11:22.26</span>
       <span class="ruled-meta">↓ 9.0% this season</span>
-      <span class="ruled-badge">19th · 3A</span>
+      <span class="ruled-badge">8th in section · 16th in 3A</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">02</span>
       <span class="ruled-name">1600m</span>
       <span class="ruled-meta" style="color:var(--acc);font-weight:700;">5:11.67</span>
       <span class="ruled-meta">↓ 8.5% this season</span>
-      <span class="ruled-badge">24th · 3A</span>
+      <span class="ruled-badge">11th in section · 27th in 3A</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">03</span>
