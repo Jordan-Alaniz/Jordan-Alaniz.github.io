@@ -33,9 +33,14 @@ permalink: /athletics/
       <div class="stat-card-delta">↓ 9.9% this season</div>
     </div>
     <div class="stat-card">
-      <div class="stat-card-val">5:11 <span class="stat-card-unit">1600m</span></div>
-      <div class="stat-card-lbl">11th in section · 27th in Class 3A · Outdoor</div>
-      <div class="stat-card-delta">↓ 8.5% this season</div>
+      <div class="stat-card-val">5:07 <span class="stat-card-unit">1600m</span></div>
+      <div class="stat-card-lbl">8th in section 4 · Class 3A · Outdoor</div>
+      <div class="stat-card-delta">↓ 9.6% this season</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-val">20.38 <span class="stat-card-unit">110m Hurdles</span></div>
+      <div class="stat-card-lbl">8th in section 4 · sectionals finalist · 3A</div>
+      <div class="stat-card-delta">Debut season · 2026 Outdoor</div>
     </div>
   </div>
 
@@ -60,11 +65,11 @@ permalink: /athletics/
         <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:22.26</span>
         <span class="ruled-badge">8th in section · 16th in 3A</span>
       </div>
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m" data-time="5:11.67" data-rank="11th in section · 27th in 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m" data-time="5:07.24" data-rank="8th in section 4 · 3A">
         <span class="ruled-num">02</span>
         <span class="ruled-name">1600m</span>
-        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">5:11.67</span>
-        <span class="ruled-badge">11th in section · 27th in 3A</span>
+        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">5:07.24</span>
+        <span class="ruled-badge">8th in section 4 · 3A</span>
       </div>
       <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="800m" data-time="2:25.16" data-rank="30th · 3A">
         <span class="ruled-num">03</span>
@@ -84,6 +89,12 @@ permalink: /athletics/
         <span class="ruled-meta">1:00.61</span>
         <span class="ruled-badge">—</span>
       </div>
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="110m Hurdles" data-time="20.38" data-rank="8th in section 4 · sectionals finalist">
+        <span class="ruled-num">06</span>
+        <span class="ruled-name">110m Hurdles</span>
+        <span class="ruled-meta">20.38</span>
+        <span class="ruled-badge">8th in section 4 · sectionals finalist</span>
+      </div>
     </div>
   </div>
   <div id="awards" class="section-anchor"></div>
@@ -100,6 +111,10 @@ permalink: /athletics/
     <div class="info-cell"><div class="info-pip"></div><div>
       <div class="info-cell-title">4th in Section 4 — 3200m</div>
       <div class="info-cell-sub">2026 Outdoor</div>
+    </div></div>
+    <div class="info-cell"><div class="info-pip"></div><div>
+      <div class="info-cell-title">8th in Section 4 — 1600m</div>
+      <div class="info-cell-sub">2026 Outdoor · Sectionals</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
       <div class="info-cell-title">NCAA ID: 2504562826</div>

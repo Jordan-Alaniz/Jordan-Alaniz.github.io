@@ -48,9 +48,9 @@ permalink: /recruit/
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">02</span>
       <span class="ruled-name">1600m</span>
-      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">5:11.67</span>
-      <span class="ruled-meta">↓ 8.5% this season</span>
-      <span class="ruled-badge">11th in section · 27th in 3A</span>
+      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">5:07.24</span>
+      <span class="ruled-meta">↓ 9.6% this season</span>
+      <span class="ruled-badge">8th in section 4 · 3A</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">03</span>
@@ -65,6 +65,13 @@ permalink: /recruit/
       <span class="ruled-meta">2:25.16</span>
       <span class="ruled-meta">↓ season PR</span>
       <span class="ruled-badge">30th · 3A</span>
+    </div>
+    <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
+      <span class="ruled-num">05</span>
+      <span class="ruled-name">110m Hurdles</span>
+      <span class="ruled-meta">20.38</span>
+      <span class="ruled-meta">Debut season</span>
+      <span class="ruled-badge">8th in section 4 · sectionals finalist</span>
     </div>
   </div>
 
