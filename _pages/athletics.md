@@ -40,7 +40,7 @@ permalink: /athletics/
     <div class="stat-card">
       <div class="stat-card-val">19.87 <span class="stat-card-unit">110m Hurdles</span></div>
       <div class="stat-card-lbl">6th in section 4 · school record · sectionals finalist · 3A</div>
-      <div class="stat-card-delta">Debut season · 2026 Outdoor</div>
+      <div class="stat-card-delta">↓ 9.7% this season</div>
     </div>
   </div>
 
