@@ -57,6 +57,10 @@
 <script>
 (function(){
   function mmss(s){var m=Math.floor(s/60),sc=Math.round(s%60);return m+':'+(sc<10?'0':'')+sc;}
+  function fmtTime(s){
+    if(s<60){var f=parseFloat(s).toFixed(2);return f+'s';}
+    return mmss(s);
+  }
   function moyr(obj){
     var mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     return mo[obj.m-1]+" '"+String(obj.y).slice(2);
@@ -106,7 +110,7 @@
        {y:847,s:'xc24',d:{y:2024,m:8},n:'BJXC First Chance'},
        {y:786,s:'xc25',d:{y:2025,m:8},n:'BJXC First Chance'}
      ]},
-    {id:'m3200', label:'3200m',   color:'#7a5a3d', pr:'11:22',
+    {id:'m3200', label:'3200m',   color:'#7a5a3d', pr:'11:12',
       pts:[
         {y:750,s:'out25',d:{y:2025,m:4}, n:'AHSAA Sectionals'},
         {y:700,s:'in26', d:{y:2026,m:1}, n:'Last Chance #1'},
@@ -115,7 +119,8 @@
         {y:712,s:'out26',d:{y:2026,m:3}, n:'James Clemens Invitational'},
         {y:726,s:'out26',d:{y:2026,m:3}, n:'Oneonta Meet #2'},
         {y:700,s:'out26',d:{y:2026,m:4}, n:'Bob Jones Invitational'},
-        {y:682.26,s:'out26',d:{y:2026,m:4}, n:'Gulf Shores Battle at the Beach (Apr 19)'}
+        {y:682.26,s:'out26',d:{y:2026,m:4}, n:'Gulf Shores Battle at the Beach (Apr 19)'},
+        {y:672.12,s:'out26',d:{y:2026,m:4}, n:'AHSAA 3A Sect. 4 Winfield — Sectionals (8th)'}
       ]},
     {id:'m1600', label:'1600m',   color:'#8a4a6e', pr:'5:07',
       pts:[
@@ -136,6 +141,11 @@
        {y:153,s:'out25',d:{y:2025,m:4}, n:'Bob Jones Invitational'},
        {y:147,s:'in26', d:{y:2025,m:12},n:'Holiday Invitational'},
        {y:145,s:'out26',d:{y:2026,m:3}, n:'James Clemens'}
+     ]},
+    {id:'m110h', label:'110m Hurdles', color:'#6e3d7a', pr:'19.87',
+     pts:[
+       {y:20.38,s:'out26',d:{y:2026,m:4}, n:'AHSAA 3A Sect. 4 Winfield — Sectionals Prelim (8th)'},
+       {y:19.87,s:'out26',d:{y:2026,m:4}, n:'AHSAA 3A Sect. 4 Winfield — Sectionals Finals (6th · School Record)'}
      ]}
   ];
 
@@ -227,9 +237,9 @@
     var bar=document.getElementById('chart-summary-bar');
     if(bar){
       bar.innerHTML=imp ?
-        '<div class="csb-item"><span class="csb-label">First race</span><span class="csb-value">'+mmss(imp.from)+'</span></div>'+
+        '<div class="csb-item"><span class="csb-label">First race</span><span class="csb-value">'+fmtTime(imp.from)+'</span></div>'+
         '<div class="csb-divider"></div>'+
-        '<div class="csb-item"><span class="csb-label">Current PR</span><span class="csb-value is-pr">\u2605 '+mmss(imp.to)+'</span></div>'+
+        '<div class="csb-item"><span class="csb-label">Current PR</span><span class="csb-value is-pr">\u2605 '+fmtTime(imp.to)+'</span></div>'+
         '<div class="csb-divider"></div>'+
         '<div class="csb-item"><span class="csb-label">Improvement</span><span class="csb-value is-imp">\u25bc '+imp.pct+'%</span></div>'+
         '<div class="csb-divider"></div>'+
@@ -308,7 +318,7 @@
           },
           y:{
             reverse:true,
-            ticks:{callback:function(v){return mmss(v);},maxTicksLimit:7,font:{size:11},color:'#999'},
+            ticks:{callback:function(v){return fmtTime(v);},maxTicksLimit:7,font:{size:11},color:'#999'},
             grid:{color:'#f2f2f0'},
             title:{display:true,text:'finish time  (lower = faster)',font:{size:10.5},color:'#bbb'}
           }
@@ -344,7 +354,7 @@
                 if(!r)return '';
                 var prTag=r.y===bestY?'  \u2605 PR':'';
                 var venueTag=r.venue==='indoor'?' (indoor)':r.venue==='outdoor'?' (outdoor)':'';
-                return ev.label+': '+mmss(r.y)+venueTag+prTag;
+                return ev.label+': '+fmtTime(r.y)+venueTag+prTag;
               },
               afterLabel:function(item){
                 var r=item.raw;
