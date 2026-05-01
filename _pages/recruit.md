@@ -48,9 +48,9 @@ permalink: /recruit/
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">02</span>
       <span class="ruled-name">1600m</span>
-      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">5:07.24</span>
-      <span class="ruled-meta">↓ 9.6% this season</span>
-      <span class="ruled-badge">8th in section 4 · 3A</span>
+      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">4:57.17</span>
+      <span class="ruled-meta">↓ 12.6% this season</span>
+      <span class="ruled-badge">18th in state · AHSAA 1A-3A · 3A</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">03</span>
