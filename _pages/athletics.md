@@ -23,9 +23,9 @@ permalink: /athletics/
   <div id="stats" class="section-anchor"></div>
   <div class="stat-cards">
     <div class="stat-card">
-      <div class="stat-card-val">11:12 <span class="stat-card-unit">3200m</span></div>
-      <div class="stat-card-lbl">8th in section 4 · Sectionals · Class 3A</div>
-      <div class="stat-card-delta">↓ 10.4% this season</div>
+      <div class="stat-card-val">11:01 <span class="stat-card-unit">3200m</span></div>
+      <div class="stat-card-lbl">13th in state · AHSAA 1A-3A · Class 3A</div>
+      <div class="stat-card-delta">↓ 11.9% all-time</div>
     </div>
     <div class="stat-card">
       <div class="stat-card-val">19:34 <span class="stat-card-unit">5K XC</span></div>
@@ -59,11 +59,11 @@ permalink: /athletics/
       <span class="sort-col" data-col="2" data-type="text" aria-sort="none">Rank <span class="sort-icon">⇅</span></span>
     </div>
     <div class="pr-tbody">
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m" data-time="11:12.12" data-rank="8th in section 4 · Sectionals · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="3200m" data-time="11:01.04" data-rank="13th in state · AHSAA 1A-3A · 3A">
         <span class="ruled-num">01</span>
         <span class="ruled-name">3200m</span>
-        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:12.12</span>
-        <span class="ruled-badge">8th in section 4 · Sectionals · 3A</span>
+        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">11:01.04</span>
+        <span class="ruled-badge">13th in state · AHSAA 1A-3A · 3A</span>
       </div>
       <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1600m" data-time="4:57.17" data-rank="18th in state · AHSAA 1A-3A · 3A">
         <span class="ruled-num">02</span>
@@ -109,8 +109,8 @@ permalink: /athletics/
       <div class="info-cell-sub">2025 season</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
-      <div class="info-cell-title">4th in Section 4 — 3200m</div>
-      <div class="info-cell-sub">2026 Outdoor</div>
+      <div class="info-cell-title">13th in State — 3200m</div>
+      <div class="info-cell-sub">AHSAA 1A-3A Outdoor State Championship · May 2026 · 11:01.04</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
       <div class="info-cell-title">18th in State — 1600m</div>
