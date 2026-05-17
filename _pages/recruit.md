@@ -54,24 +54,38 @@ permalink: /recruit/
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
       <span class="ruled-num">03</span>
+      <span class="ruled-name">1500m</span>
+      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">4:49.76</span>
+      <span class="ruled-meta">State decathlon result</span>
+      <span class="ruled-badge">13th in AL · AHSAA State Decathlon · May 12, 2026</span>
+    </div>
+    <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
+      <span class="ruled-num">04</span>
       <span class="ruled-name">5K Cross Country</span>
       <span class="ruled-meta" style="color:var(--acc);font-weight:700;">19:34.42</span>
       <span class="ruled-meta">↓ 9.9% this season</span>
       <span class="ruled-badge">State qualifier</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
-      <span class="ruled-num">04</span>
+      <span class="ruled-num">05</span>
       <span class="ruled-name">800m</span>
       <span class="ruled-meta">2:25.16</span>
       <span class="ruled-meta">↓ season PR</span>
       <span class="ruled-badge">30th · 3A</span>
     </div>
     <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
-      <span class="ruled-num">05</span>
+      <span class="ruled-num">06</span>
       <span class="ruled-name">110m Hurdles</span>
       <span class="ruled-meta">19.87</span>
       <span class="ruled-meta">Debut season · school record</span>
       <span class="ruled-badge">6th in section 4 · sectionals finalist</span>
+    </div>
+    <div class="ruled-row" style="grid-template-columns:2rem 1fr 1fr 1fr auto;">
+      <span class="ruled-num">07</span>
+      <span class="ruled-name">Decathlon</span>
+      <span class="ruled-meta" style="color:var(--acc);font-weight:700;">3653 pts</span>
+      <span class="ruled-meta">AHSAA State Decathlon</span>
+      <span class="ruled-badge">49th in AL · 142nd in nation · May 11–12, 2026</span>
     </div>
   </div>
 
