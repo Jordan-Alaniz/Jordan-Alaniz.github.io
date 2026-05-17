@@ -42,6 +42,16 @@ permalink: /athletics/
       <div class="stat-card-lbl">6th in section 4 · school record · sectionals finalist · 3A</div>
       <div class="stat-card-delta">↓ 9.7% this season</div>
     </div>
+    <div class="stat-card">
+      <div class="stat-card-val">4:49.76 <span class="stat-card-unit">1500m</span></div>
+      <div class="stat-card-lbl">13th in AL · AHSAA State Decathlon · May 12, 2026</div>
+      <div class="stat-card-delta">State decathlon result</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-val">3653 <span class="stat-card-unit">Decathlon pts</span></div>
+      <div class="stat-card-lbl">49th in AL · 142nd in nation · AHSAA State Decathlon</div>
+      <div class="stat-card-delta">May 11–12, 2026</div>
+    </div>
   </div>
 
   <div id="progression" class="section-anchor"></div>
@@ -71,29 +81,41 @@ permalink: /athletics/
         <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">4:57.17</span>
         <span class="ruled-badge">18th in state · AHSAA 1A-3A · 3A</span>
       </div>
-      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="800m" data-time="2:25.16" data-rank="30th · 3A">
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="1500m" data-time="4:49.76" data-rank="13th in AL · AHSAA State Decathlon · May 12, 2026">
         <span class="ruled-num">03</span>
+        <span class="ruled-name">1500m</span>
+        <span class="ruled-meta pr-time" style="color:#3d5a6e;font-weight:700;">4:49.76</span>
+        <span class="ruled-badge">13th in AL · AHSAA State Decathlon · May 12, 2026</span>
+      </div>
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="800m" data-time="2:25.16" data-rank="30th · 3A">
+        <span class="ruled-num">04</span>
         <span class="ruled-name">800m</span>
         <span class="ruled-meta">2:25.16</span>
         <span class="ruled-badge">30th · 3A</span>
       </div>
       <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="5K Cross Country" data-time="19:34.42" data-rank="State qualifier">
-        <span class="ruled-num">04</span>
+        <span class="ruled-num">05</span>
         <span class="ruled-name">5K Cross Country</span>
         <span class="ruled-meta">19:34.42</span>
         <span class="ruled-badge">State qualifier</span>
       </div>
       <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="400m" data-time="1:00.61" data-rank="—">
-        <span class="ruled-num">05</span>
+        <span class="ruled-num">06</span>
         <span class="ruled-name">400m</span>
         <span class="ruled-meta">1:00.61</span>
         <span class="ruled-badge">—</span>
       </div>
       <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="110m Hurdles" data-time="19.87" data-rank="6th in section 4 · school record · sectionals finalist">
-        <span class="ruled-num">06</span>
+        <span class="ruled-num">07</span>
         <span class="ruled-name">110m Hurdles</span>
         <span class="ruled-meta">19.87</span>
         <span class="ruled-badge">6th in section 4 · school record · sectionals finalist</span>
+      </div>
+      <div class="ruled-row pr-row" style="grid-template-columns:2rem 1fr 1fr auto;" data-event="Decathlon" data-time="3653" data-rank="49th in AL · 142nd in nation · AHSAA State Decathlon · May 11–12, 2026">
+        <span class="ruled-num">08</span>
+        <span class="ruled-name">Decathlon</span>
+        <span class="ruled-meta">3653 pts</span>
+        <span class="ruled-badge">49th in AL · 142nd in nation · AHSAA State Decathlon · May 11–12, 2026</span>
       </div>
     </div>
   </div>
@@ -119,6 +141,14 @@ permalink: /athletics/
     <div class="info-cell"><div class="info-pip"></div><div>
       <div class="info-cell-title">6th in Section 4 — 110m Hurdles · School Record</div>
       <div class="info-cell-sub">AHSAA 3A Sectionals · 2026 Outdoor · 19.87</div>
+    </div></div>
+    <div class="info-cell"><div class="info-pip"></div><div>
+      <div class="info-cell-title">13th in AL — 1500m</div>
+      <div class="info-cell-sub">4:49.76 · AHSAA State Decathlon · May 12, 2026</div>
+    </div></div>
+    <div class="info-cell"><div class="info-pip"></div><div>
+      <div class="info-cell-title">49th in AL · 142nd in Nation — Decathlon</div>
+      <div class="info-cell-sub">3653 points · AHSAA State Decathlon · May 11–12, 2026</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
       <div class="info-cell-title">NCAA ID: 2504562826</div>
