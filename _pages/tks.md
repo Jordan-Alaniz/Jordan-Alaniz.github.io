@@ -54,7 +54,8 @@ page_bg: recruit
     </p>
 
     <div style="display:flex;flex-wrap:wrap;gap:1rem; margin-top:1.5rem;">
-      <a href="https://www.theksociety.com" target="_blank" class="recruit-pdf-btn primary" style="display:inline-flex;">TKS Website</a>
+      <a href="mailto:?subject=Pledge%20Support%20for%20Jordan%27s%20TKS%20Opportunity&body=Hi%20Jordan%2C%0A%0AI%20would%20like%20to%20pledge%20support%20in%20the%20amount%20of%20%24____%20for%20your%20TKS%20opportunity.%20Please%20follow%20up%20with%20me%20when%20you%20are%20ready%20to%20collect%20it.%0A%0AName%3A%20____%0AOrganization%3A%20____%0A%0AThank%20you!" class="recruit-pdf-btn primary" style="display:inline-flex;">Pledge Support via Email</a>
+      <a href="https://www.theksociety.com" target="_blank" class="recruit-pdf-btn secondary" style="display:inline-flex;">TKS Website</a>
       <a href="https://www.ascte.org" target="_blank" class="recruit-pdf-btn secondary" style="display:inline-flex;">ASCTE Website</a>
       <a href="{{ '/recruit/' | relative_url }}" class="recruit-pdf-btn secondary" style="display:inline-flex;">My Profile</a>
     </div>
