@@ -7,41 +7,23 @@ page_bg: recruit
 ---
 
 <div class="section">
-  <div style="max-width: 850px; margin: 0 auto;">
-    <h1>Help Me Attend TKS</h1>
+  <div style="max-width: 900px; margin: 0 auto;">
+    <div style="background: linear-gradient(135deg, rgba(60,110,138,.16), rgba(139,92,246,.10)); border:1px solid var(--border-dark); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem;">
+      <p style="margin:0 0 .5rem; text-transform:uppercase; letter-spacing:.12em; font-size:.75rem; color:var(--tx3);">TKS Fundraising</p>
+      <h1 style="margin:0 0 .75rem;">Help Me Attend TKS</h1>
+      <p style="margin:0; font-size:1.05rem; line-height:1.8; color:var(--tx2);">
+        I was accepted into The Knowledge Society, and I’m trying to raise the remaining cost to make it possible. This page is here to explain why it matters to me and what support would help.
+      </p>
+    </div>
 
-    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2);">
-      My name is Jordan Alaniz. I’m a student at the Alabama School of Cyber Technology and Engineering (ASCTE) in Huntsville, and I live in the Springville/Remlap area on Pine Mountain.
-    </p>
-
-    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2);">
-      I was recently accepted into The Knowledge Society (TKS), and I’m excited about the chance to be part of it. TKS is a selective program that brings together students who want to grow in leadership, innovation, and real-world problem solving.
-    </p>
-
-    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2);">
-      For me, this opportunity matters because TKS excites me in a way few other programs do. It would give me a chance to collaborate with other people who share my passion and drive for learning — people who, like me, want to understand more and keep growing. I want to be someone who helps people, someone who never stops learning, and I think this program would help me move closer to both of those goals.
-    </p>
-
-    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2);">
-      I also want to start my own company one day, even if I’m still figuring out exactly what that will look like. In the future, I want to research biological computation and help push technology toward bio-based solutions. I already have a solid foundation through ASCTE, and TKS feels like a pathway that could help me create projects, expand my horizons, and reach as far as I can.
-    </p>
-
-    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2);">
-      I’m fundraising to cover the remaining cost of the program. If you choose to support me, you’d be helping make an opportunity like this possible and giving me a chance to grow in a meaningful way.
-    </p>
-
-    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2);">
-      If you’d like verification, I can provide a screenshot of my acceptance email from TKS.
-    </p>
-
-    <div class="info-grid" style="border:1px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;margin:2rem 0;">
+    <div class="info-grid" style="border:1px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem;">
       <div class="info-cell"><div class="info-pip"></div><div>
-        <div class="info-cell-title">About TKS</div>
-        <div class="info-cell-sub">A program for students exploring innovation, leadership, and emerging ideas.</div>
+        <div class="info-cell-title">Who I am</div>
+        <div class="info-cell-sub">Jordan Alaniz · ASCTE student in Huntsville · from the Springville/Remlap area on Pine Mountain</div>
       </div></div>
       <div class="info-cell"><div class="info-pip"></div><div>
-        <div class="info-cell-title">Why I want it</div>
-        <div class="info-cell-sub">It’s a chance to grow, meet driven people, and build skills I can carry with me for years.</div>
+        <div class="info-cell-title">What TKS is</div>
+        <div class="info-cell-sub">A selective program for students who want to grow in leadership, innovation, and real-world problem solving.</div>
       </div></div>
       <div class="info-cell"><div class="info-pip"></div><div>
         <div class="info-cell-title">What support helps with</div>
@@ -49,8 +31,37 @@ page_bg: recruit
       </div></div>
     </div>
 
-    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2);">
-      Thank you for reading, and for considering whether you might be able to help. I truly appreciate it.
+    <h2 style="margin:1.5rem 0 .75rem;">Why this matters to me</h2>
+    <div style="background: rgba(255,255,255,.03); border:1px solid var(--border-dark); border-left:4px solid var(--acc); border-radius: var(--radius); padding: 1.25rem 1.25rem 1rem; margin-bottom: 1.5rem;">
+      <p style="margin-top:0; font-size:1.05rem; line-height:1.8; color:var(--tx2);">
+        TKS excites me because it gives me a chance to collaborate with people who share my passion and drive for learning — people who want to know more, just like I do.
+      </p>
+      <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin-bottom:0;">
+        I want to be someone who helps people and never stops learning. One day, I want to start my own company, and I also want to explore biological computation and bio-based technology. ASCTE has already given me a strong foundation, and TKS feels like a pathway to create projects, expand my horizons, and keep reaching farther.
+      </p>
+    </div>
+
+    <h2 style="margin:1.5rem 0 .75rem;">A little more about me</h2>
+    <div class="info-grid" style="border:1px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem;">
+      <div class="info-cell"><div class="info-pip"></div><div>
+        <div class="info-cell-title">My goal</div>
+        <div class="info-cell-sub">To keep learning, build meaningful things, and use what I learn to help others.</div>
+      </div></div>
+      <div class="info-cell"><div class="info-pip"></div><div>
+        <div class="info-cell-title">Why I’m asking</div>
+        <div class="info-cell-sub">I’m fundraising for the remaining cost of the program, and any support gets me closer to being able to attend.</div>
+      </div></div>
+    </div>
+
+    <h2 style="margin:1.5rem 0 .75rem;">Verification</h2>
+    <div style="background: rgba(139,92,246,.08); border:1px solid var(--border-dark); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
+      <p style="margin:0; font-size:1.02rem; line-height:1.8; color:var(--tx2);">
+        If you’d like verification, I can provide a screenshot of my acceptance email from TKS.
+      </p>
+    </div>
+
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin-bottom:1.5rem;">
+      Thank you for reading and for considering whether you might be able to help. I truly appreciate it.
     </p>
 
     <div style="display:flex;flex-wrap:wrap;gap:1rem; margin-top:1.5rem;">
