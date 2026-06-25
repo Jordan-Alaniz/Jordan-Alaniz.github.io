@@ -8,6 +8,9 @@ main:
   - title: Blog
     url: /blog/
 
+  - title: TKS Fundraising
+    url: /tks/
+
   - title: Resume
     url: "#"
     children:
