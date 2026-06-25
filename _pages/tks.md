@@ -16,6 +16,13 @@ page_bg: recruit
       </p>
     </div>
 
+    <div style="margin-bottom:1.5rem;">
+      <h2 style="margin:0 0 .5rem;">The cost</h2>
+      <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0;">
+        TKS costs $3,890 after financial aid. I’m setting a fundraising goal of $2,000 to help make attendance possible, and I’m continuing to work toward covering the rest.
+      </p>
+    </div>
+
     <div class="info-grid" style="border:1px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem;">
       <div class="info-cell"><div class="info-pip"></div><div>
         <div class="info-cell-title">Who I am</div>
@@ -42,23 +49,14 @@ page_bg: recruit
     </div>
 
     <h2 style="margin:1.5rem 0 .75rem;">A little more about me</h2>
-    <div class="info-grid" style="border:1px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem;">
-      <div class="info-cell"><div class="info-pip"></div><div>
-        <div class="info-cell-title">My goal</div>
-        <div class="info-cell-sub">To keep learning, build meaningful things, and use what I learn to help others.</div>
-      </div></div>
-      <div class="info-cell"><div class="info-pip"></div><div>
-        <div class="info-cell-title">Why I’m asking</div>
-        <div class="info-cell-sub">I’m fundraising for the remaining cost of the program, and any support gets me closer to being able to attend.</div>
-      </div></div>
-    </div>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1rem;">
+      My goal is to keep learning, build meaningful things, and use what I learn to help others. I’m fundraising for the remaining cost of the program, and any support gets me closer to being able to attend.
+    </p>
 
     <h2 style="margin:1.5rem 0 .75rem;">Verification</h2>
-    <div style="background: rgba(139,92,246,.08); border:1px solid var(--border-dark); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
-      <p style="margin:0; font-size:1.02rem; line-height:1.8; color:var(--tx2);">
-        If you’d like verification, I can provide a screenshot of my acceptance email from TKS.
-      </p>
-    </div>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1.5rem;">
+      If you’d like verification, I can provide a screenshot of my acceptance email from TKS.
+    </p>
 
     <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin-bottom:1.5rem;">
       Thank you for reading and for considering whether you might be able to help. I truly appreciate it.
