@@ -12,31 +12,33 @@ page_bg: recruit
       <p style="margin:0 0 .5rem; text-transform:uppercase; letter-spacing:.12em; font-size:.75rem; color:var(--tx3);">TKS Fundraising</p>
       <h1 style="margin:0 0 .75rem;">Help Me Attend TKS</h1>
       <p style="margin:0; font-size:1.05rem; line-height:1.8; color:var(--tx2);">
-        I was accepted into The Knowledge Society, and I’m trying to raise the remaining cost to make it possible. This page is here to explain why it matters to me and what support would help.
+        I was accepted into The Knowledge Society, and I’m trying to raise the remaining cost to make it possible. This page explains what TKS is, why it matters to me, and how support can help.
       </p>
     </div>
 
-    <div style="margin-bottom:1.5rem;">
-      <h2 style="margin:0 0 .5rem;">The cost</h2>
-      <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0;">
-        TKS costs $3,890 after financial aid. I’m setting a fundraising goal of $2,000 to help make attendance possible, and I’m continuing to work toward covering the rest.
-      </p>
-    </div>
+    <h2 style="margin:1.5rem 0 .75rem;">What TKS is</h2>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1rem;">
+      The Knowledge Society is a selective program for students who want to grow in leadership, innovation, and real-world problem solving. It brings together students who care about learning deeply, thinking seriously about the future, and building things that matter.
+    </p>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1.5rem;">
+      I’m excited about it because it feels like the kind of environment where I can learn from other motivated people, challenge myself, and grow into the kind of person I want to become.
+    </p>
 
-    <div class="info-grid" style="border:1px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem;">
-      <div class="info-cell"><div class="info-pip"></div><div>
-        <div class="info-cell-title">Who I am</div>
-        <div class="info-cell-sub">Jordan Alaniz · ASCTE student in Huntsville · from the Springville/Remlap area on Pine Mountain</div>
-      </div></div>
-      <div class="info-cell"><div class="info-pip"></div><div>
-        <div class="info-cell-title">What TKS is</div>
-        <div class="info-cell-sub">A selective program for students who want to grow in leadership, innovation, and real-world problem solving.</div>
-      </div></div>
-      <div class="info-cell"><div class="info-pip"></div><div>
-        <div class="info-cell-title">What support helps with</div>
-        <div class="info-cell-sub">Covering the remaining cost so I can take part in the program.</div>
-      </div></div>
-    </div>
+    <h2 style="margin:1.5rem 0 .75rem;">The cost</h2>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1rem;">
+      TKS costs $3,890 after financial aid. I’m setting a fundraising goal of $2,000 to help make attendance possible, and I’m continuing to work toward covering the rest.
+    </p>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1.5rem;">
+      I’m also continuing to build toward the total on my own, so the goal here is to close the gap enough to make attending realistic and manageable.
+    </p>
+
+    <h2 style="margin:1.5rem 0 .75rem;">Who I am</h2>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1rem;">
+      My name is Jordan Alaniz. I’m a student at the Alabama School of Cyber Technology and Engineering (ASCTE) in Huntsville, and I live in the Springville/Remlap area on Pine Mountain.
+    </p>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1.5rem;">
+      ASCTE has already given me a strong foundation, and I want to keep building on that. I’m interested in learning more, doing meaningful work, and finding ways to use what I learn to help people.
+    </p>
 
     <h2 style="margin:1.5rem 0 .75rem;">Why this matters to me</h2>
     <div style="background: rgba(255,255,255,.03); border:1px solid var(--border-dark); border-left:4px solid var(--acc); border-radius: var(--radius); padding: 1.25rem 1.25rem 1rem; margin-bottom: 1.5rem;">
@@ -44,13 +46,16 @@ page_bg: recruit
         TKS excites me because it gives me a chance to collaborate with people who share my passion and drive for learning — people who want to know more, just like I do.
       </p>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin-bottom:0;">
-        I want to be someone who helps people and never stops learning. One day, I want to start my own company, and I also want to explore biological computation and bio-based technology. ASCTE has already given me a strong foundation, and TKS feels like a pathway to create projects, expand my horizons, and keep reaching farther.
+        I want to be someone who helps people and never stops learning. One day, I want to start my own company, and I also want to explore biological computation and bio-based technology. TKS feels like a pathway to create projects, expand my horizons, and keep reaching farther.
       </p>
     </div>
 
     <h2 style="margin:1.5rem 0 .75rem;">A little more about me</h2>
     <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1rem;">
-      My goal is to keep learning, build meaningful things, and use what I learn to help others. I’m fundraising for the remaining cost of the program, and any support gets me closer to being able to attend.
+      My goal is to keep learning, build meaningful things, and use what I learn to help others. I’m not asking because this is casual to me — I’m asking because this is a real opportunity that I believe could shape what I do next.
+    </p>
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--tx2); margin:0 0 1.5rem;">
+      If you choose to support me, you’d be helping make that opportunity possible.
     </p>
 
     <h2 style="margin:1.5rem 0 .75rem;">Verification</h2>
