@@ -46,7 +46,7 @@ page_bg: recruit
 
     <p>If you choose to support me, you’d be helping make that opportunity possible.</p>
 
-    <a class="ruled-badge" style="display:inline-block;padding:.6rem 1rem;font-size:.8rem;text-decoration:none;" href="mailto:jordan.alaniz@outlook.com?subject=Pledge%20Support%20for%20Jordan%20Alaniz%20%E2%80%94%20TKS&body=Hello%20Jordan%2C%0A%0AI%20am%20writing%20to%20pledge%20support%20for%20your%20attendance%20at%20The%20Knowledge%20Society%20(TKS).%0A%0APledge%20amount%3A%20%24%5Bamount%5D%0AName%3A%20%5Byour%20name%5D%0AOrganization%20(optional)%3A%20%5Borganization%5D%0A%0AIf%20needed%2C%20please%20share%20the%20best%20way%20to%20submit%20this%20pledge.%0A%0AThank%20you%2C%0A%5Byour%20name%5D">Pledge Support via Email</a>
+    <a class="ruled-badge" style="display:inline-block;padding:.6rem 1rem;font-size:.8rem;text-decoration:none;" href="mailto:jordan.alaniz@outlook.com?subject=Pledge%20Support%20for%20Jordan%20Alaniz%20%E2%80%94%20TKS&body=Hello%20Jordan%2C%0A%0AI%20am%20writing%20to%20pledge%20support%20for%20your%20attendance%20at%20The%20Knowledge%20Society%20(TKS).%0A%0APledge%20amount%3A%20%24%5Bamount%5D%0AName%3A%20%5Byour%20name%5D%0AOrganization%20(optional)%3A%20%5Borganization%5D%0A%0AThank%20you%2C%0A%5Byour%20name%5D">Pledge Support via Email</a>
 
     <hr>
 
@@ -60,6 +60,6 @@ page_bg: recruit
       <a href="{{ '/academics.md' | relative_url }}">My Profile</a>
     </p>
 
-    <p>Thank you for reading and for considering whether you might be able to help. I truly appreciate it.</p>
+    <p>Thank you for reading and for considering whether you may be able to help. I truly appreciate it.</p>
   </div>
 </div>
