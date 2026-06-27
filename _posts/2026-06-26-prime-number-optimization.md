@@ -32,14 +32,16 @@ Simple, but slow for large ranges. Every number gets its own full check.
 Instead of checking one number at a time, using parallel processing in chunks reduces time significantly:
 
 ```python
-def sieve(limit):
-    is_prime = [True] * (limit + 1)
-    is_prime[0] = is_prime[1] = False
-    for i in range(2, int(limit**0.5) + 1):
-        if is_prime[i]:
-            for j in range(i*i, limit + 1, i):
-                is_prime[j] = False
-    return [i for i, v in enumerate(is_prime) if v]
+with multiprocessing.Pool(max_processes) as pool:
+    while True:
+        current_chunks = list(itertools.chain(*pool.map(work, [next(chunks) for i in range(max_processes)])))
+        if len(current_chunks) + nums_found < calcTo:
+            nums_found += len(current_chunks)
+        else:
+            current_chunks.sort()
+            time2 = perf_counter()
+            print(f'Your #: {current_chunks[calcTo-nums_found-1]}\nTime: {time2 - time1}sec')
+            break
 ```
 
 This is dramatically faster for finding all primes up to a large limit, but requires much more processing power and still hits computational slow-downs.
