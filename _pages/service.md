@@ -4,14 +4,14 @@ title: Service
 bg: service
 chapter: "Service"
 page_bg: service
-subtitle: "73 service hours · CAP Senior Master Sergeant · ASCTE Ambassador · Beta Club."
+subtitle: "76 service hours · CAP Senior Master Sergeant · ASCTE Ambassador · Beta Club."
 permalink: /service/
 ---
 
 <div class="section">
   <div class="stat-cards">
     <div class="stat-card">
-      <div class="stat-card-val">73 <span class="stat-card-unit">hours</span></div>
+      <div class="stat-card-val">76 <span class="stat-card-unit">hours</span></div>
       <div class="stat-card-lbl">Service hours to date</div>
     </div>
     <div class="stat-card">
