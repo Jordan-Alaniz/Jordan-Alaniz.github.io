@@ -10,8 +10,8 @@ permalink: /recruit/
 
   <div class="stat-cards">
     <div class="stat-card">
-      <div class="stat-card-val">4.29 <span class="stat-card-unit">GPA</span></div>
-      <div class="stat-card-lbl">Weighted · All Honors/AP · 3× President's List</div>
+      <div class="stat-card-val">4.31 <span class="stat-card-unit">GPA</span></div>
+      <div class="stat-card-lbl">Weighted · All Honors/AP · 4× President's List</div>
     </div>
     <div class="stat-card">
       <div class="stat-card-val">32 · 1310 <span class="stat-card-unit">ACT / SAT</span></div>
@@ -28,7 +28,7 @@ permalink: /recruit/
     <a href="{{ '/assets/files/Jordan_Alaniz_Athletic_Resume.pdf' | relative_url }}" target="_blank" class="recruit-pdf-btn primary">
       ↓ Athletic Recruiting Profile (PDF)
     </a>
-    <a href="{{ '/assets/files/Jordan_Alaniz_Academic_Resume.pdf' | relative_url }}" target="_blank" class="recruit-pdf-btn secondary">
+    <a href="{{ '/assets/files/Alaniz_Jordan_Academic_Resume.pdf' | relative_url }}" target="_blank" class="recruit-pdf-btn secondary">
       ↓ Academic Resume (PDF)
     </a>
   </div>
@@ -128,12 +128,12 @@ permalink: /recruit/
       <div class="info-cell-sub">Engineering/Nursing/EMS (undecided specialty) · strong CS, Medical, and English foundation</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
-      <div class="info-cell-title">3× President's List · Cyber Award</div>
-      <div class="info-cell-sub">CyberPatriot — top 30% nationally, 3rd in state · National Beta Club</div>
+      <div class="info-cell-title">4× President's List · 2× Cyber Award</div>
+      <div class="info-cell-sub">CyberPatriot — top 30% nationally, 3rd in state · National Beta Club · National Honor Society</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
       <div class="info-cell-title">Wilderness First Responder · BLS · HAM Radio</div>
-      <div class="info-cell-sub">FEMA ICS &amp; NIMS certified · Junior Fire Academy · 41 volunteer hours</div>
+      <div class="info-cell-sub">FEMA ICS &amp; NIMS certified · Junior Fire Academy · 73 volunteer hours</div>
     </div></div>
   </div>
 

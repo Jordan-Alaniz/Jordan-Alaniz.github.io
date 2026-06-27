@@ -11,7 +11,7 @@ tags:
 
 ## Overview
 
-As part of the ASCTE 301/401 engineering curriculum, I designed a trebuchet entirely in Fusion 360 before building it with limited, real-world materials.
+As part of the ASCTE 301/401 engineering curriculum, I worked with my team and designed a trebuchet entirely in Fusion 360 before building it with limited, real-world materials.
 
 ## Goals
 

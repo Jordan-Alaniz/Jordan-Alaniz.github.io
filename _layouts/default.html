@@ -15,7 +15,7 @@
   <meta property="og:title"       content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:url"         content="{{ page.url | absolute_url }}">
-  <meta property="og:image"       content="{{ '/assets/images/bio-photo.jpg' | absolute_url }}">
+  <meta property="og:image"       content="{{ '/assets/images/bio-photo.jepg' | absolute_url }}">
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
@@ -55,11 +55,11 @@
   <div class="footer-inner">
     <span class="footer-name">Jordan Alaniz &copy; {{ 'now' | date: '%Y' }}</span>
     <div class="footer-links">
-      <a href="mailto:{{ site.email }}">Email</a><button class="copy-email-btn" data-email="{{ site.email }}" title="Copy email address" aria-label="Copy email address">⎘</button>
+      <a href="mailto:{{ site.email }}">Email</a>
       <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a>
       <a href="{{ site.milesplit_url }}" target="_blank" rel="noopener">MileSplit</a>
-      <a href="{{ '/assets/files/Jordan_Alaniz_Academic_Resume.pdf' | relative_url }}" target="_blank">Academic CV</a>
+      <a href="{{ '/assets/files/Alaniz_Jordan_Academic_Resume.pdf' | relative_url }}" target="_blank">Academic CV</a>
       <a href="{{ '/assets/files/Jordan_Alaniz_Athletic_Resume.pdf' | relative_url }}" target="_blank">Athletic Profile</a>
     </div>
   </div>
