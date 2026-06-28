@@ -63,8 +63,8 @@ page_bg: recruit
 
     <h3>Contact</h3>
     <p>
-      <strong>Email:</strong> <a href="mailto:jordan.alaniz@outlook.com">jordan.alaniz@outlook.com</a><br>
-      <strong>Phone:</strong> (659) 346-8055<br>
+      Email: <a href="mailto:jordan.alaniz@outlook.com">jordan.alaniz@outlook.com</a><br>
+      Phone: (659) 346-8055<br>
       Feel free to contact me with any addition questions you might have!
     </p>
 
