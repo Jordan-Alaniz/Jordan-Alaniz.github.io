@@ -50,14 +50,22 @@ page_bg: recruit
 
     <hr>
 
-    <h2>Verification</h2>
+    <h2>Additional Info</h2>
 
     <p>If you’d like verification, I can provide a screenshot of my acceptance email from TKS.</p>
 
+    <h3>Links</h3>
     <p>
       <a href="https://www.theksociety.com">TKS Website</a><br>
       <a href="https://www.ascte.org">ASCTE Website</a><br>
       <a href="{{ '/academics.md' | relative_url }}">My Profile</a>
+    </p>
+
+    <h3>Contact</h3>
+    <p>
+      Email: <a href="mailto:jordan.alaniz@outlook.com>jordan.alaniz@outlook.com</a><br>
+      Phone: (659) 346-8055<br>
+      Feel free to contact me with any addition questions you might have!
     </p>
 
     <p>Thank you for reading and for considering whether you may be able to help. I truly appreciate it.</p>
