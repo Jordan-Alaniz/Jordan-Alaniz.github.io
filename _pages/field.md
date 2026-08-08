@@ -4,14 +4,14 @@ title: Field
 bg: field
 chapter: "Field"
 page_bg: field
-subtitle: "Five active certifications in emergency medicine, communications, and incident command."
+subtitle: "Four active certifications in emergency medicine, communications, and incident command."
 permalink: /field/
 ---
 
 <div class="section">
   <div class="stat-cards">
     <div class="stat-card">
-      <div class="stat-card-val">5</div>
+      <div class="stat-card-val">4</div>
       <div class="stat-card-lbl">Active certifications</div>
     </div>
     <div class="stat-card">
@@ -28,17 +28,12 @@ permalink: /field/
   <div class="info-grid" style="border:1px solid var(--border-dark);border-radius:var(--radius);overflow:hidden;margin-bottom:2.5rem;">
     <div class="info-cell"><div class="info-pip"></div><div>
       <div class="info-cell-title">Wilderness First Responder</div>
-      <div class="info-cell-sub">NOLS — field-level emergency medicine for remote environments. The most comprehensive pre-hospital wilderness cert available.</div>
+      <div class="info-cell-sub">NOLS — 70+ hours of field-level emergency medicine for remote environments. Covers patient assessment, trauma, environmental emergencies, and evacuation decisions in settings far from definitive care.</div>
       <div class="info-badge">Medical · Field</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
-      <div class="info-cell-title">Basic Life Support Certified</div>
-      <div class="info-cell-sub">American Heart Association — clinical-grade CPR, AED use, and airway management.</div>
-      <div class="info-badge">Medical</div>
-    </div></div>
-    <div class="info-cell"><div class="info-pip"></div><div>
-      <div class="info-cell-title">CPR / AED — Heart Saver</div>
-      <div class="info-cell-sub">American Heart Association — layperson-level cardiac emergency response.</div>
+      <div class="info-cell-title">Basic Life Support · CPR / AED</div>
+      <div class="info-cell-sub">American Heart Association — clinical-grade CPR, AED use, and airway management (BLS), plus layperson Heart Saver certification. Both issued by AHA.</div>
       <div class="info-badge">Medical</div>
     </div></div>
     <div class="info-cell"><div class="info-pip"></div><div>
@@ -64,6 +59,6 @@ permalink: /field/
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">CAP Orientation Flights · 4 flight hours as pilot under instruction</span><span class="ruled-badge">4 hrs logged</span></div>
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Junior Fire Academy</span><span class="ruled-badge">2× attendee</span></div>
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Wilderness First Aid Intro / Medical Emergencies</span><span class="ruled-badge">Completed</span></div>
-    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Fire, EMS, & Nursing — exploring as career directions</span><span class="ruled-badge">Active interest</span></div>
+    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Emergency medicine / EMS — active secondary track alongside cybersecurity</span><span class="ruled-badge">Active interest</span></div>
   </div>
 </div>

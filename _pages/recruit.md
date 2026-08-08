@@ -94,11 +94,11 @@ permalink: /recruit/
     <a href="{{ '/athletics/' | relative_url }}" style="color:var(--acc);font-weight:600;">View full season-by-season charts →</a>
   </p>
 
-  <span class="section-label">Coach contact</span>
+  <span class="section-label">Coach reference</span>
   <div class="recruit-coach-card">
     <div class="recruit-coach-detail">
       <div class="recruit-coach-name">Erin Smith</div>
-      <div class="recruit-coach-role">Head Track &amp; Cross Country Coach · ASCTE</div>
+      <div class="recruit-coach-role">Head Track &amp; Cross Country Coach · ASCTE (former coach)</div>
       <div class="recruit-coach-links">
         <a href="mailto:Erin.smith@ascte.org" class="recruit-coach-link">✉ Erin.smith@ascte.org</a>
         <a href="tel:2566038700" class="recruit-coach-link">✆ (256) 603-8700</a>
@@ -109,6 +109,9 @@ permalink: /recruit/
       <strong style="color:var(--tx2);">NCAA ID:</strong> 2504562826
     </div>
   </div>
+  <p style="font-size:.8rem;color:var(--tx2);margin-top:.75rem;">
+    I transferred to Springville High School for senior year. Springville does not currently have a track coach — Coach Smith remains my primary athletic reference and can speak to my full competitive history at ASCTE.
+  </p>
 
   <span class="section-label">Coach's words</span>
   <div class="recruit-quote">

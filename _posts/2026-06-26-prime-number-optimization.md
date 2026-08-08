@@ -9,7 +9,7 @@ tags:
   - Distributed Computing
 ---
 
-One of my personal projects involved computing prime numbers as fast as possible. What started as a simple exercise turned into a deep dive on algorithm design and distributed computing. My current goal is finding a way to reach the billionth prime number and beyond with a realistic hardware setup.
+One of my personal projects involved computing prime numbers as fast as possible. What started as a simple exercise turned into a deep dive on algorithm design and distributed computing. I've reached approximately the 100 millionth prime on a single machine (verification pending), and my current goal is pushing further with a multi-machine cluster — eventually targeting the billionth prime with a realistic hardware setup.
 
 ## Starting Point: Trial Division
 
@@ -56,7 +56,7 @@ Note: I have found that simply brute forcing primes can be significantly faster 
 
 I know from being around computers that GPU processing for small numerical tasks is unlike anything I have tried so far. It does depend heavily on the type and manufacturer of the GPU though, and might require learning a new language. I do want to research in the future how I could leverage my GPU to accelerate my search even further.
 
-_Additional topics:_ I did find a random pdf somewhere about a newer way to find prime numbers, so I will need to read up. I could also experiment with binary tricks to possibly skip numbers or more efficiently search through them. A segmented bitwise sieve distributed across a cluster would also be incredibly quick while RAM is not a limit.
+_Additional topics:_ I have a paper queued on a different algorithmic approach to prime generation that I want to work through. I could also experiment with binary tricks to skip numbers or search more efficiently. A segmented bitwise sieve distributed across a cluster would be incredibly fast while RAM is not a constraint.
 
 ## What I Took Away
 

@@ -31,8 +31,9 @@ permalink: /service/
       <div class="info-cell-sub">Senior Master Sergeant · Springville Cadet Squadron AL-126 · 2022–2024. Led 12–15 cadets through drill and weekly activities. Completed 4 orientation flights — 4 flight hours logged as pilot under instruction.</div>
       <div class="info-badge">Leadership</div>
     </div></div>
-    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">ASCTE Ambassador</div><div class="info-cell-sub">Staffed admissions events, represented school values of Honor, Joy, Tenacity, Kindness, and Integrity · 2024–2025.</div><div class="info-badge">14 service hrs</div></div></div>
-    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">ASCTE Residential Activities Council Member</div><div class="info-cell-sub">Planned and organized events for ASCTE Residential Life with other council members.</div><div class="info-badge">30 service hours</div></div></div>
+    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">ASCTE Ambassador</div><div class="info-cell-sub">Staffed graduation and awards day ceremonies, assisted with campus tours for school sponsors, and represented ASCTE at admissions events · 2024–2025.</div><div class="info-badge">14 service hrs</div></div></div>
+    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">ASCTE Residential Activities Council</div><div class="info-cell-sub">Planned and helped set up residential life events across five months — Halloween party, Valentine's Day, Mardi Gras celebration, and weekend programming — for ASCTE's residential student body.</div><div class="info-badge">30 service hrs</div></div></div>
+    <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">Sound Design · Theatre Technology</div><div class="info-cell-sub">Created and organized sound assets in production software, then ran live audio cues and triggered timed sound event chains synchronized to performances · 2023–2025.</div><div class="info-badge">Technical</div></div></div>
     <div class="info-cell"><div class="info-pip"></div><div><div class="info-cell-title">Pine Mountain Bluegrass & BBQ</div><div class="info-cell-sub">Annual community event volunteer · June 2023, 2024, 2025. Event setup and BBQ pre-order fulfillment.</div><div class="info-badge">10 service hrs</div></div></div>
   </div>
   <span class="section-label">Activities & clubs</span>
@@ -44,10 +45,8 @@ permalink: /service/
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">ASCTE Peer Helpers</span><span class="ruled-badge">Active</span></div>
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">HAM Radio Club</span><span class="ruled-badge">Active</span></div>
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Mu Alpha Theta</span><span class="ruled-badge">Member</span></div>
-    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Residential Activities Council</span><span class="ruled-badge">Member</span></div>
-    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Junior Fire Academy</span><span class="ruled-badge">2× attendee</span></div>
-    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">ASCTE Ambassador Program</span><span class="ruled-badge">2024-25</span></div>
-    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Drama / Theatre Technology</span><span class="ruled-badge">2023-25</span></div>
+    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Residential Activities Council</span><span class="ruled-badge">2024-25</span></div>
+    <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Sound Design · Theatre Technology</span><span class="ruled-badge">2023-25</span></div>
     <div class="ruled-row" style="grid-template-columns:1fr auto;"><span class="ruled-name">Civil Air Patrol Cadet Program</span><span class="ruled-badge">2022-24</span></div>
   </div>
 </div>
